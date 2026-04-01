@@ -1,975 +1,871 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>10029 Henderson Dr — For Sale by Owner | Oklahoma City, OK 73139</title>
-<meta name="description" content="For Sale by Owner: 3 bed, 3 bath ranch home with heated in-ground pool, cabana, and smart home features. 2,516 sq ft in Moore school district. Oklahoma City, OK 73139.">
-<meta property="og:title" content="10029 Henderson Dr — For Sale by Owner">
-<meta property="og:description" content="3 bed, 3 bath ranch with heated pool, cabana with full bath, enclosed sunroom, and 90+ smart home devices. 2,516 sq ft, Moore school district.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://hendersondriveokc.online">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏡</text></svg>">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-:root {
-  --navy: #1a2332;
-  --blue: #2563eb;
-  --blue-light: #3b82f6;
-  --green: #059669;
-  --gold: #d97706;
-  --bg: #f8fafc;
-  --card: #ffffff;
-  --text: #1e293b;
-  --muted: #64748b;
-  --border: #e2e8f0;
-  --radius: 12px;
-}
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
-a { color: var(--blue); text-decoration: none; }
-a:hover { text-decoration: underline; }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>10029 Henderson Dr | Owner-Listed Home | Oklahoma City, OK</title>
+  <meta name="description" content="10029 Henderson Dr, Oklahoma City, OK 73139 — owner-listed home with pool, pergola, full-utility cabana, studio / flex room, multiple living areas, Moore Public Schools, and direct live chat for questions and showing requests." />
+  <meta name="theme-color" content="#0f172a" />
+  <style>
+    :root {
+      --bg: #f7fafc;
+      --surface: #ffffff;
+      --ink: #0f172a;
+      --muted: #475569;
+      --line: #e2e8f0;
+      --brand: #0f766e;
+      --brand-dark: #115e59;
+      --accent: #1d4ed8;
+      --soft: #ecfeff;
+      --shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+      --radius: 22px;
+      --radius-sm: 16px;
+      --max: 1200px;
+    }
 
-/* HEADER */
-header {
-  background: var(--navy);
-  color: #fff;
-  padding: 12px 0;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: 0 2px 12px rgba(0,0,0,.2);
-}
-header .wrap {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-header .logo {
-  font-size: 1.1rem;
-  font-weight: 700;
-  letter-spacing: -.02em;
-}
-header .logo span { color: var(--blue-light); }
-nav a {
-  color: rgba(255,255,255,.85);
-  margin-left: 24px;
-  font-size: .9rem;
-  font-weight: 500;
-}
-nav a:hover { color: #fff; text-decoration: none; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top right, rgba(13, 148, 136, 0.08), transparent 20%),
+        linear-gradient(180deg, #f8fbff 0%, #f7fafc 100%);
+      line-height: 1.6;
+    }
 
-/* HERO */
-.hero {
-  background: linear-gradient(135deg, var(--navy) 0%, #2d3a4f 100%);
-  color: #fff;
-  padding: 80px 24px 60px;
-  text-align: center;
-}
-.hero h1 {
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
-  font-weight: 800;
-  letter-spacing: -.03em;
-  margin-bottom: 8px;
-}
-.hero .address {
-  font-size: 1.15rem;
-  color: rgba(255,255,255,.75);
-  margin-bottom: 28px;
-}
-.hero .price-tag {
-  display: inline-block;
-  background: var(--green);
-  color: #fff;
-  padding: 12px 36px;
-  border-radius: 50px;
-  font-size: 1.6rem;
-  font-weight: 800;
-  letter-spacing: -.02em;
-  margin-bottom: 28px;
-  box-shadow: 0 4px 16px rgba(5,150,105,.3);
-}
-.hero .quick-facts {
-  display: flex;
-  justify-content: center;
-  gap: 32px;
-  flex-wrap: wrap;
-}
-.hero .fact {
-  text-align: center;
-}
-.hero .fact .num {
-  font-size: 1.6rem;
-  font-weight: 700;
-  display: block;
-}
-.hero .fact .lbl {
-  font-size: .8rem;
-  color: rgba(255,255,255,.6);
-  text-transform: uppercase;
-  letter-spacing: .05em;
-}
+    a { color: inherit; }
+    img { max-width: 100%; display: block; }
 
-/* BADGE BAR */
-.badge-bar {
-  background: var(--card);
-  border-bottom: 1px solid var(--border);
-  padding: 16px 24px;
-  text-align: center;
-}
-.badge-bar .badges {
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-  flex-wrap: wrap;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.badge-bar .badge {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: .85rem;
-  font-weight: 600;
-  color: var(--text);
-}
-.badge-bar .badge .icon {
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-}
-.badge-bar .badge .icon.blue { background: #dbeafe; }
-.badge-bar .badge .icon.green { background: #d1fae5; }
-.badge-bar .badge .icon.gold { background: #fef3c7; }
-.badge-bar .badge .icon.purple { background: #ede9fe; }
+    .shell {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 20px 70px;
+    }
 
-/* SECTIONS */
-.section {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 64px 24px;
-}
-.section-title {
-  font-size: 1.6rem;
-  font-weight: 800;
-  text-align: center;
-  margin-bottom: 8px;
-  letter-spacing: -.02em;
-}
-.section-subtitle {
-  text-align: center;
-  color: var(--muted);
-  margin-bottom: 40px;
-  font-size: .95rem;
-}
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      -webkit-backdrop-filter: blur(14px);
+      backdrop-filter: blur(14px);
+      background: rgba(255, 255, 255, 0.84);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+    }
 
-/* PHOTO GRID */
-.photo-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 12px;
-  margin-bottom: 16px;
-}
-.photo-placeholder {
-  aspect-ratio: 4/3;
-  background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
-  border-radius: var(--radius);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: var(--muted);
-  font-size: .9rem;
-  font-weight: 500;
-  gap: 8px;
-  border: 2px dashed var(--border);
-}
-.photo-placeholder .camera { font-size: 2rem; }
+    .topbar-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
 
-/* FEATURE CARDS */
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 20px;
-}
-.feature-card {
-  background: var(--card);
-  border-radius: var(--radius);
-  padding: 28px 24px;
-  border: 1px solid var(--border);
-  transition: box-shadow .2s, transform .2s;
-}
-.feature-card:hover {
-  box-shadow: 0 8px 24px rgba(0,0,0,.08);
-  transform: translateY(-2px);
-}
-.feature-card .icon-circle {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.4rem;
-  margin-bottom: 16px;
-}
-.feature-card h3 {
-  font-size: 1.05rem;
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-.feature-card p {
-  color: var(--muted);
-  font-size: .9rem;
-  line-height: 1.6;
-}
-.feature-card ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.feature-card li {
-  padding: 4px 0;
-  font-size: .9rem;
-  color: var(--muted);
-  position: relative;
-  padding-left: 20px;
-}
-.feature-card li::before {
-  content: '✓';
-  position: absolute;
-  left: 0;
-  color: var(--green);
-  font-weight: 700;
-}
+    .brand {
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      font-size: 1rem;
+    }
 
-/* DETAILS TABLE */
-.details-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-}
-@media (max-width: 768px) { .details-grid { grid-template-columns: 1fr; } }
-.detail-card {
-  background: var(--card);
-  border-radius: var(--radius);
-  overflow: hidden;
-  border: 1px solid var(--border);
-}
-.detail-card .card-header {
-  background: var(--navy);
-  color: #fff;
-  padding: 14px 20px;
-  font-weight: 700;
-  font-size: .95rem;
-}
-.detail-card table {
-  width: 100%;
-  border-collapse: collapse;
-}
-.detail-card td {
-  padding: 12px 20px;
-  border-bottom: 1px solid var(--border);
-  font-size: .9rem;
-}
-.detail-card tr:last-child td { border-bottom: none; }
-.detail-card td:first-child {
-  font-weight: 600;
-  color: var(--text);
-  width: 45%;
-}
-.detail-card td:last-child {
-  color: var(--muted);
-}
+    .brand span { color: var(--brand); }
 
-/* SMART HOME */
-.smart-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 12px;
-}
-.smart-item {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 16px;
-  text-align: center;
-  transition: box-shadow .2s;
-}
-.smart-item:hover { box-shadow: 0 4px 12px rgba(0,0,0,.06); }
-.smart-item .emoji { font-size: 1.8rem; margin-bottom: 8px; }
-.smart-item .name { font-weight: 600; font-size: .9rem; }
-.smart-item .desc { color: var(--muted); font-size: .8rem; margin-top: 4px; }
+    .nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
 
-/* MAP / NEIGHBORHOOD */
-.neighborhood-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-}
-@media (max-width: 768px) { .neighborhood-grid { grid-template-columns: 1fr; } }
-.neighborhood-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 24px;
-}
-.neighborhood-card h3 {
-  font-size: 1.05rem;
-  font-weight: 700;
-  margin-bottom: 12px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.neighborhood-card li {
-  padding: 6px 0;
-  color: var(--muted);
-  font-size: .9rem;
-}
+    .nav a {
+      text-decoration: none;
+      font-weight: 600;
+    }
 
-/* CTA */
-.cta-section {
-  background: linear-gradient(135deg, var(--navy) 0%, #2d3a4f 100%);
-  color: #fff;
-  text-align: center;
-  padding: 64px 24px;
-}
-.cta-section h2 {
-  font-size: 1.8rem;
-  font-weight: 800;
-  margin-bottom: 12px;
-}
-.cta-section p {
-  color: rgba(255,255,255,.7);
-  margin-bottom: 32px;
-  font-size: 1rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.cta-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-.cta-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 14px 32px;
-  border-radius: 50px;
-  font-size: 1rem;
-  font-weight: 700;
-  text-decoration: none;
-  transition: transform .2s, box-shadow .2s;
-}
-.cta-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0,0,0,.2);
-  text-decoration: none;
-}
-.cta-btn.primary {
-  background: var(--green);
-  color: #fff;
-}
-.cta-btn.secondary {
-  background: rgba(255,255,255,.15);
-  color: #fff;
-  border: 1px solid rgba(255,255,255,.3);
-}
+    .nav .admin-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--soft);
+      border: 1px solid rgba(15, 118, 110, 0.18);
+      color: var(--brand-dark);
+      font-weight: 800;
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
+    }
 
-/* CONTACT FORM */
-.contact-form {
-  max-width: 600px;
-  margin: 32px auto 0;
-  background: rgba(255,255,255,.08);
-  padding: 28px;
-  border-radius: var(--radius);
-  border: 1px solid rgba(255,255,255,.1);
-}
-.contact-form .form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-bottom: 12px;
-}
-@media (max-width: 600px) { .contact-form .form-row { grid-template-columns: 1fr; } }
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 12px 16px;
-  border: 1px solid rgba(255,255,255,.2);
-  border-radius: 8px;
-  background: rgba(255,255,255,.06);
-  color: #fff;
-  font-family: inherit;
-  font-size: .9rem;
-}
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-  color: rgba(255,255,255,.4);
-}
-.contact-form textarea {
-  margin-bottom: 12px;
-  resize: vertical;
-}
-.contact-form button {
-  width: 100%;
-  padding: 14px;
-  border: none;
-  border-radius: 50px;
-  background: var(--blue);
-  color: #fff;
-  font-size: 1rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: background .2s;
-}
-.contact-form button:hover { background: var(--blue-light); }
+    .nav .admin-link:hover {
+      background: #dff9ff;
+    }
 
-/* FOOTER */
-footer {
-  background: var(--navy);
-  color: rgba(255,255,255,.5);
-  text-align: center;
-  padding: 24px;
-  font-size: .8rem;
-}
-footer a { color: rgba(255,255,255,.7); }
+    .hero {
+      margin: 28px 0 24px;
+      border-radius: 30px;
+      overflow: hidden;
+      background: #0f172a;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
 
-/* COMPARISON TABLE */
-.comp-highlight {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow-x: auto;
-}
-.comp-highlight table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: .85rem;
-}
-.comp-highlight th,
-.comp-highlight td {
-  padding: 12px 16px;
-  text-align: left;
-  border-bottom: 1px solid var(--border);
-}
-.comp-highlight th {
-  background: #f1f5f9;
-  font-weight: 700;
-  color: var(--text);
-  position: sticky;
-  top: 0;
-}
-.comp-highlight tr.subject {
-  background: #eff6ff;
-  font-weight: 600;
-}
-.comp-highlight tr:hover { background: #f8fafc; }
+    .hero-media {
+      min-height: 520px;
+      position: relative;
+      display: grid;
+      align-items: end;
+      background:
+        linear-gradient(180deg, rgba(2, 6, 23, 0.15) 0%, rgba(2, 6, 23, 0.78) 72%),
+        url('https://photos.zillowstatic.com/fp/00b52a9336119c12396d5db28969b151-uncropped_scaled_within_1536_1152.jpg') center/cover no-repeat;
+    }
 
-.tag {
-  display: inline-block;
-  padding: 2px 10px;
-  border-radius: 20px;
-  font-size: .75rem;
-  font-weight: 600;
-}
-.tag-fsbo { background: #d1fae5; color: #065f46; }
-.tag-sold { background: #e0e7ff; color: #3730a3; }
+    .hero-copy {
+      padding: 34px;
+      color: white;
+      max-width: 760px;
+    }
 
-/* FSBO BANNER */
-.fsbo-banner {
-  background: #ecfdf5;
-  border: 1px solid #a7f3d0;
-  border-radius: var(--radius);
-  padding: 20px 24px;
-  text-align: center;
-  margin-bottom: 32px;
-}
-.fsbo-banner strong {
-  color: var(--green);
-  font-size: 1.05rem;
-}
-.fsbo-banner p {
-  color: var(--muted);
-  font-size: .9rem;
-  margin-top: 4px;
-}
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
 
-/* DISCLOSURE */
-.disclosure-box {
-  background: #fffbeb;
-  border: 1px solid #fde68a;
-  border-radius: var(--radius);
-  padding: 20px 24px;
-  margin-top: 32px;
-  font-size: .85rem;
-  color: #92400e;
-}
-.disclosure-box strong { display: block; margin-bottom: 6px; }
-</style>
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(2.1rem, 5vw, 4rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-sub {
+      margin: 0 0 22px;
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.84);
+      max-width: 62ch;
+    }
+
+    .hero-note {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 0 0 22px;
+    }
+
+    .hero-pills,
+    .stats,
+    .feature-grid,
+    .story-grid,
+    .gallery-grid,
+    .fact-grid,
+    .contact-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .hero-pills {
+      grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+      margin-bottom: 22px;
+    }
+
+    .pill {
+      border-radius: 18px;
+      padding: 14px 16px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .pill strong {
+      display: block;
+      font-size: 1.08rem;
+      margin-bottom: 2px;
+    }
+
+    .pill span {
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.74);
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 14px 20px;
+      border-radius: 999px;
+      font-weight: 700;
+      text-decoration: none;
+      border: 1px solid transparent;
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 24px rgba(15, 23, 42, 0.18);
+    }
+
+    .btn-primary {
+      background: white;
+      color: var(--ink);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.22);
+      color: white;
+    }
+
+    .section {
+      margin-top: 22px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .section h2 {
+      margin: 0 0 8px;
+      font-size: clamp(1.45rem, 2vw, 2rem);
+      letter-spacing: -0.02em;
+    }
+
+    .section-intro {
+      margin: 0 0 18px;
+      color: var(--muted);
+      max-width: 70ch;
+    }
+
+    .stats {
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+
+    .stat-card,
+    .feature-card,
+    .story-card,
+    .fact-card,
+    .contact-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+      padding: 20px;
+    }
+
+    .stat-label {
+      color: var(--muted);
+      font-size: 0.88rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+    }
+
+    .stat-value {
+      font-size: 1.7rem;
+      font-weight: 800;
+      margin-top: 6px;
+      letter-spacing: -0.03em;
+    }
+
+    .feature-grid, .story-grid, .fact-grid {
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .feature-card h3,
+    .story-card h3,
+    .contact-card h3,
+    .fact-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.05rem;
+      letter-spacing: -0.01em;
+    }
+
+    .kicker {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: var(--brand-dark);
+      background: var(--soft);
+      padding: 6px 10px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .feature-card p,
+    .story-card p,
+    .fact-card p,
+    .contact-card p,
+    .caption {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .gallery-grid {
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .gallery-grid-spaced {
+      margin-top: 18px;
+    }
+
+    .gallery-card {
+      cursor: pointer;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 10px 20px rgba(15, 23, 42, 0.04);
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+
+    .gallery-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 36px rgba(15, 23, 42, 0.12);
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: 205px;
+      object-fit: cover;
+      background: #e2e8f0;
+    }
+
+    .gallery-meta {
+      padding: 14px 14px 16px;
+    }
+
+    .gallery-meta strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 0.97rem;
+    }
+
+    .gallery-meta span {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .banner {
+      padding: 18px 20px;
+      background: linear-gradient(135deg, rgba(13, 148, 136, 0.1), rgba(29, 78, 216, 0.07));
+      border: 1px solid rgba(13, 148, 136, 0.18);
+      border-radius: 18px;
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .fact-grid {
+      margin-top: 18px;
+    }
+
+    .contact-grid {
+      grid-template-columns: 1.2fr 1fr;
+      align-items: stretch;
+    }
+
+    .map-shell {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 10px 20px rgba(15, 23, 42, 0.04);
+    }
+
+    .map-shell iframe {
+      width: 100%;
+      height: min(460px, 70vw);
+      min-height: 320px;
+      border: 0;
+      display: block;
+    }
+
+    .map-meta {
+      padding: 16px 18px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      color: var(--muted);
+    }
+
+    .map-meta a {
+      color: var(--brand-dark);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .contact-card ul {
+      margin: 10px 0 0 18px;
+      padding: 0;
+      color: var(--muted);
+    }
+
+    .contact-card li { margin-bottom: 8px; }
+
+    .footer {
+      max-width: var(--max);
+      margin: 28px auto 0;
+      padding: 0 20px 36px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .disclosure {
+      font-size: 0.86rem;
+      color: var(--muted);
+      margin-top: 14px;
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(2, 6, 23, 0.82);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      z-index: 50;
+    }
+
+    .modal.open { display: flex; }
+
+    .modal-panel {
+      width: min(1100px, 100%);
+      background: #0f172a;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 25px 60px rgba(0,0,0,0.35);
+    }
+
+    .modal-image {
+      width: 100%;
+      max-height: 72vh;
+      object-fit: contain;
+      background: #0b1120;
+    }
+
+    .modal-meta {
+      padding: 16px 18px 18px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .modal-meta small {
+      color: rgba(255,255,255,0.7);
+      display: block;
+      margin-top: 4px;
+    }
+
+    .modal-controls {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .modal-btn {
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.08);
+      color: white;
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    @media (max-width: 900px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .hero-media { min-height: 470px; }
+    }
+
+    @media (max-width: 700px) {
+      .topbar-inner { align-items: flex-start; flex-direction: column; }
+      .hero-copy, .section { padding: 22px; }
+      .hero-media { min-height: 430px; }
+      .gallery-card img { height: 190px; }
+      .modal-meta { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
 </head>
 <body>
-
-<!-- HEADER -->
-<header>
-  <div class="wrap">
-    <div class="logo">🏡 <span>10029 Henderson Dr</span></div>
-    <nav>
-      <a href="#photos">Photos</a>
-      <a href="#features">Features</a>
-      <a href="#details">Details</a>
-      <a href="#smart-home">Smart Home</a>
-      <a href="#neighborhood">Neighborhood</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
-
-<!-- HERO -->
-<section class="hero">
-  <h1>For Sale by Owner</h1>
-  <p class="address">10029 Henderson Dr, Oklahoma City, OK 73139</p>
-  <div class="price-tag">$319,900</div>
-  <div class="quick-facts">
-    <div class="fact"><span class="num">3</span><span class="lbl">Bedrooms</span></div>
-    <div class="fact"><span class="num">3</span><span class="lbl">Bathrooms</span></div>
-    <div class="fact"><span class="num">2,516</span><span class="lbl">Sq Ft</span></div>
-    <div class="fact"><span class="num">1976</span><span class="lbl">Year Built</span></div>
-    <div class="fact"><span class="num">0.24</span><span class="lbl">Acres</span></div>
-    <div class="fact"><span class="num">2-Car</span><span class="lbl">Garage</span></div>
-  </div>
-</section>
-
-<!-- BADGE BAR -->
-<div class="badge-bar">
-  <div class="badges">
-    <div class="badge"><div class="icon blue">🏊</div> Heated Pool + Hot Tub</div>
-    <div class="badge"><div class="icon green">🏠</div> Pool Cabana w/ Full Bath</div>
-    <div class="badge"><div class="icon gold">☀️</div> Enclosed Sunroom</div>
-    <div class="badge"><div class="icon purple">📱</div> 90+ Smart Home Devices</div>
-  </div>
-</div>
-
-<!-- PHOTOS -->
-<div class="section" id="photos">
-  <h2 class="section-title">Property Photos</h2>
-  <p class="section-subtitle">Professional photography coming soon</p>
-  <div class="photo-grid">
-    <div class="photo-placeholder"><span class="camera">📷</span>Front Exterior</div>
-    <div class="photo-placeholder"><span class="camera">📷</span>Living Room</div>
-    <div class="photo-placeholder"><span class="camera">📷</span>Kitchen</div>
-    <div class="photo-placeholder"><span class="camera">📷</span>Primary Bedroom</div>
-    <div class="photo-placeholder"><span class="camera">📷</span>Pool & Patio</div>
-    <div class="photo-placeholder"><span class="camera">📷</span>Cabana / Pool House</div>
-    <div class="photo-placeholder"><span class="camera">📷</span>Sunroom</div>
-    <div class="photo-placeholder"><span class="camera">📷</span>Backyard Overview</div>
-    <div class="photo-placeholder"><span class="camera">📷</span>Dining Room</div>
-  </div>
-  <p style="text-align:center;color:var(--muted);font-size:.85rem">Photos will be uploaded once professional photography is complete.</p>
-</div>
-
-<!-- FEATURES -->
-<div class="section" id="features" style="background:#fff;max-width:none;padding-left:24px;padding-right:24px">
-  <div style="max-width:1200px;margin:0 auto">
-    <h2 class="section-title">What Makes This Home Special</h2>
-    <p class="section-subtitle">A thoughtfully upgraded ranch with resort-style outdoor living</p>
-
-    <div class="features-grid">
-
-      <div class="feature-card">
-        <div class="icon-circle" style="background:#dbeafe">🏊</div>
-        <h3>Heated In-Ground Pool</h3>
-        <ul>
-          <li>Year-round heated swimming pool</li>
-          <li>Integrated hot tub / spa</li>
-          <li>Premium flagstone decking</li>
-          <li>Fully fenced private backyard</li>
-        </ul>
-      </div>
-
-      <div class="feature-card">
-        <div class="icon-circle" style="background:#d1fae5">🏠</div>
-        <h3>Pool Cabana with Full Bath</h3>
-        <ul>
-          <li>Separate pool house structure</li>
-          <li>Full bathroom (toilet, sink, shower)</li>
-          <li>Perfect for entertaining guests</li>
-          <li>Functions as guest changing suite</li>
-        </ul>
-      </div>
-
-      <div class="feature-card">
-        <div class="icon-circle" style="background:#fef3c7">☀️</div>
-        <h3>Enclosed Sunroom</h3>
-        <ul>
-          <li>~325 sq ft of bonus living space</li>
-          <li>Central HVAC — heated & cooled</li>
-          <li>Overlooks pool and patio</li>
-          <li>Year-round climate-controlled</li>
-        </ul>
-      </div>
-
-      <div class="feature-card">
-        <div class="icon-circle" style="background:#ede9fe">📱</div>
-        <h3>Complete Smart Home</h3>
-        <ul>
-          <li>90+ connected devices</li>
-          <li>Ring security system + cameras</li>
-          <li>Smart lighting in every room</li>
-          <li>Smart irrigation, garage, HVAC</li>
-        </ul>
-      </div>
-
-      <div class="feature-card">
-        <div class="icon-circle" style="background:#fce7f3">🍳</div>
-        <h3>Chef-Style Kitchen</h3>
-        <ul>
-          <li>Samsung SmartThings appliances</li>
-          <li>Ample counter and cabinet space</li>
-          <li>Open to living area</li>
-          <li>Modern fixtures</li>
-        </ul>
-      </div>
-
-      <div class="feature-card">
-        <div class="icon-circle" style="background:#e0e7ff">🏡</div>
-        <h3>Spacious Ranch Layout</h3>
-        <ul>
-          <li>Single-story — no stairs</li>
-          <li>Formal living & dining rooms</li>
-          <li>Multiple living areas</li>
-          <li>Walk-in closets</li>
-        </ul>
-      </div>
-
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">🏡 <span>10029 Henderson Dr</span></div>
+      <nav class="nav">
+        <a href="#gallery">Photos</a>
+        <a href="#features">Features</a>
+        <a href="#rooms">Interior</a>
+        <a href="#details">Details</a>
+        <a href="#map">Map</a>
+        <a href="#contact">Message</a>
+        <a class="admin-link" href="/admin">Admin</a>
+      </nav>
     </div>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <div class="hero-media">
+        <div class="hero-copy">
+          <div class="eyebrow">Owner listed on MLS · Showings by appointment · Oklahoma City, OK 73139</div>
+          <h1>Your own little staycation headquarters, hiding in plain sight.</h1>
+          <p class="hero-sub">A spacious single-story ranch with 3 bedrooms, 2.5 baths in the main home, multiple living spaces, a dramatic brick fireplace, a studio / workout / flex room, and a backyard that feels shockingly private for the middle of the city. Swim, grill, host, unwind, or just enjoy the fact that the neighbors do not get front-row seats.</p>
+          <div class="hero-note">Pool, spa, pergola, cabana, and a backyard that feels more tucked away than it has any right to.</div>
+
+          <div class="hero-pills">
+            <div class="pill"><strong>$319,900</strong><span>Offered price</span></div>
+            <div class="pill"><strong>2,516 sq ft</strong><span>Living area</span></div>
+            <div class="pill"><strong>3 bed / 2.5 bath</strong><span>Main home layout</span></div>
+            <div class="pill"><strong>0.24 acres</strong><span>10,454 sq ft lot</span></div>
+          </div>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#gallery">Take the photo tour</a>
+            <a class="btn btn-secondary" href="#contact" data-open-chat="general">Message about this home</a>
+            <a class="btn btn-secondary" href="#contact" data-open-chat="showing">Ask about a showing</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>At-a-glance highlights</h2>
+      <p class="section-intro">The first thing people will notice is the backyard. The second thing they will notice is that the rest of the house actually keeps up. Between the entertaining setup, the oversized formal spaces, the beamed family room, and the bonus flex space, this place has a lot more personality than the average ranch.</p>
+      <div class="stats">
+        <div class="stat-card"><div class="stat-label">Backyard</div><div class="stat-value">Pool + spa + pergola</div><p class="caption">Flagstone patio, shaded entertaining area, and detached cabana that turn a normal weekend into a better one.</p></div>
+        <div class="stat-card"><div class="stat-label">Living areas</div><div class="stat-value">Multiple</div><p class="caption">Formal living/dining plus a large den with fireplace and built-ins.</p></div>
+        <div class="stat-card"><div class="stat-label">Flex space</div><div class="stat-value">Studio / workout room</div><p class="caption">Bright bonus area overlooking the backyard that can adapt to your needs without feeling like an afterthought.</p></div>
+        <div class="stat-card"><div class="stat-label">Cabana</div><div class="stat-value">Full utilities</div><p class="caption">Separate meter, full bath with shower, and a detached setup that is actually useful, not just decorative.</p></div>
+      </div>
+    </section>
+
+    <section class="section" id="gallery">
+      <h2>Photo gallery</h2>
+      <p class="section-intro">These are the Zillow listing photos, the recent owner photo of the pergola, and the aerial map view for extra context. Click any photo for a larger look around.</p>
+      <div class="banner">The gallery includes the official listing photos, the newer pergola photo, and the overhead map view. The backyard earns a little extra screen time here for obvious reasons.</div>
+      <div class="gallery-grid gallery-grid-spaced" id="galleryGrid"></div>
+    </section>
+
+    <section class="section" id="features">
+      <h2>What really gives this place its edge</h2>
+      <p class="section-intro">Based on the photo set, these are the details most likely to make buyers pause, smile, and start mentally inviting people over.</p>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <div class="kicker">Outdoor living</div>
+          <h3>Backyard bragging rights</h3>
+          <p>The pool, raised spa, expansive stone deck, new pergola, detached cabana, and multiple seating areas give the property a rare entertainment factor for this part of the market. This is not a "tiny patio and a dream" situation.</p>
+        </article>
+        <article class="feature-card">
+          <div class="kicker">Formal spaces</div>
+          <h3>Bright front living and dining rooms</h3>
+          <p>Plantation shutters, hardwood floors, crown details, and built-in display cabinetry create a polished first impression just inside the entry without feeling stiff or overly formal.</p>
+        </article>
+        <article class="feature-card">
+          <div class="kicker">Comfort</div>
+          <h3>Warm, oversized family room</h3>
+          <p>Exposed beams, a brick fireplace, built-in shelving, and abundant floor area make the den feel like the everyday heart of the home — the kind of room that can handle movie night, game day, and a full holiday crowd.</p>
+        </article>
+        <article class="feature-card">
+          <div class="kicker">Function</div>
+          <h3>Large kitchen and breakfast area</h3>
+          <p>The kitchen offers generous cabinet storage, broad counters, double ovens, cooktop workspace, and a sunny curved breakfast nook that feels made for slow mornings and second cups of coffee.</p>
+        </article>
+        <article class="feature-card">
+          <div class="kicker">Flexible use</div>
+          <h3>Studio / flex room and cabana add versatility</h3>
+          <p>The bright rear bonus room works well as a studio, workout room, or flex space, while the detached cabana with full shower and utilities adds real independent-use value instead of just checking a marketing box.</p>
+        </article>
+        <article class="feature-card">
+          <div class="kicker">Cabana</div>
+          <h3>Legit detached utility space</h3>
+          <p>The cabana is not just a changing room — it has full utilities, its own meter, and a full bath with shower, making it far more usable than a typical pool-house add-on.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="rooms">
+      <h2>Interior story</h2>
+      <p class="section-intro">The photos show a home with distinct living zones rather than one long undifferentiated box — which is a nice way of saying people can spread out and still enjoy each other.</p>
+      <div class="story-grid">
+        <article class="story-card">
+          <div class="kicker">Entry sequence</div>
+          <h3>Inviting front approach</h3>
+          <p>Buyers first see mature landscaping, a wide driveway, covered porch, and a stately single-story façade with classic brick styling that feels established in the best way.</p>
+        </article>
+        <article class="story-card">
+          <div class="kicker">Front rooms</div>
+          <h3>Light-filled formal area</h3>
+          <p>The front rooms present especially well in photos thanks to the shutters, trim work, built-ins, and the chandelier anchoring the dining side. They feel ready for holidays, hosting, or just finally using the "nice room" more often.</p>
+        </article>
+        <article class="story-card">
+          <div class="kicker">Main den</div>
+          <h3>Character-rich living space</h3>
+          <p>Wood beams, brick hearth, shelving, and a large footprint give the den personality and a comfortable lived-in scale that feels warm instead of oversized.</p>
+        </article>
+        <article class="story-card">
+          <div class="kicker">Kitchen</div>
+          <h3>Storage and prep space</h3>
+          <p>Wood cabinetry wraps the room, while long countertops, integrated cooktop space, and the breakfast bay create a very functional everyday workspace with room to cook without playing countertop Tetris.</p>
+        </article>
+        <article class="story-card">
+          <div class="kicker">Bedroom wing</div>
+          <h3>Private sleeping spaces</h3>
+          <p>The secondary bedrooms appear roomy and bright, and the primary suite reads as especially generous, with direct access to its own bath area and a little breathing room from the rest of the action.</p>
+        </article>
+        <article class="story-card">
+          <div class="kicker">Back side</div>
+          <h3>Indoor-outdoor connection</h3>
+          <p>The rear flex room and the backyard entertaining areas connect especially well, giving the home a natural studio / workout / lounge option that opens into the pool, patio, pergola, and cabana setting. It is easy to picture this area being used a dozen different ways.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="details">
+      <h2>Property details</h2>
+      <p class="section-intro">Clean buyer-facing facts, with enough detail to be useful and none of the usual scavenger hunt.</p>
+      <div class="fact-grid">
+        <article class="fact-card"><h3>Home facts</h3><p>3 bedrooms · 2.5 bathrooms in the main home · approximately 2,516 sq ft · built in 1976 · single-story brick home · attached garage.</p></article>
+        <article class="fact-card"><h3>Lot</h3><p>Approx. 10,454 sq ft / 0.24 acres with established landscaping, backyard patio zones, and a level of backyard separation that feels pleasantly uncommon in town.</p></article>
+        <article class="fact-card"><h3>Notable amenities</h3><p>Heated in-ground pool, spa, pergola, detached cabana with full bath and shower, studio / workout / flex room, fireplace, formal rooms, and generous kitchen storage.</p></article>
+        <article class="fact-card"><h3>School district</h3><p>Moore Public Schools, with Westmoore High School serving the area.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="map">
+      <h2>See where it sits</h2>
+      <p class="section-intro">Want a quick location check before booking a showing? Here is an embedded map of 10029 Henderson Dr so visitors can get their bearings without leaving the page.</p>
+      <div class="map-shell">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.272969683027!2d-97.53115381204411!3d35.36851217668427!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87b2137dc0f0a7e1%3A0xa172f508efa73d8d!2s10029%20Henderson%20Dr%2C%20Oklahoma%20City%2C%20OK%2073139!5e1!3m2!1sen!2sus!4v1774708828155!5m2!1sen!2sus"
+          title="Map of 10029 Henderson Dr, Oklahoma City, OK 73139"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="map-meta">
+          <span>Interactive map preview for 10029 Henderson Dr, Oklahoma City, OK 73139.</span>
+          <a href="https://maps.google.com/?q=10029+Henderson+Dr+Oklahoma+City+OK+73139" target="_blank" rel="noreferrer noopener">Open in Google Maps</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <h2>Message about the home</h2>
+      <p class="section-intro">This page now uses live chat instead of posting direct phone numbers or email addresses. If you want details, showing information, or extra photos, use the chat bubble on the page and send a message there.</p>
+      <div class="contact-grid">
+        <article class="contact-card">
+          <div class="kicker">Live messaging</div>
+          <h3>Use the chat bubble</h3>
+          <p>Questions about the property, updates on availability, showing requests, and general follow-up can all start in the Crisp chat widget.</p>
+          <ul>
+            <li><strong>Best contact method:</strong> Use the chat bubble in the corner</li>
+            <li><strong>For showings:</strong> Send the days and times that work best for you</li>
+            <li><strong>For questions:</strong> Ask directly in chat and include any details you want answered</li>
+            <li><strong>For follow-up:</strong> The conversation stays in one message thread instead of bouncing between phone and email</li>
+          </ul>
+        </article>
+        <article class="contact-card">
+          <div class="kicker">What to send</div>
+          <h3>Questions, photos, and showing requests</h3>
+          <p>Send a quick note through chat if you want property details, showing coordination, or extra photo context. If you click one of the message buttons above, the chat will open with a starter prompt ready to go.</p>
+          <p class="disclosure">Please allow for scheduling lead time. Depending on workload and timing, showings may need to be arranged several days in advance.</p>
+          <p class="disclosure">Lead-based paint and Oklahoma property disclosures should be provided before contract, since the home was built before 1978.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div class="footer">
+    10029 Henderson Dr · Oklahoma City, OK 73139 · Owner-listed home page updated March 25, 2026.
   </div>
-</div>
 
-<!-- PROPERTY DETAILS -->
-<div class="section" id="details">
-  <h2 class="section-title">Property Details</h2>
-  <p class="section-subtitle">Everything you need to know</p>
-
-  <div class="details-grid">
-    <div class="detail-card">
-      <div class="card-header">🏠 Home Details</div>
-      <table>
-        <tr><td>Property Type</td><td>Single Family Ranch</td></tr>
-        <tr><td>Bedrooms</td><td>3</td></tr>
-        <tr><td>Bathrooms</td><td>3 (includes cabana bath)</td></tr>
-        <tr><td>Living Area</td><td>2,516 sq ft</td></tr>
-        <tr><td>Year Built</td><td>1976</td></tr>
-        <tr><td>Construction</td><td>Brick & Frame</td></tr>
-        <tr><td>Foundation</td><td>Slab</td></tr>
-        <tr><td>Fireplace</td><td>Yes (1)</td></tr>
-        <tr><td>Garage</td><td>Attached 2-car</td></tr>
-      </table>
-    </div>
-    <div class="detail-card">
-      <div class="card-header">📍 Lot & Location</div>
-      <table>
-        <tr><td>Lot Size</td><td>10,454 sq ft (0.24 acres)</td></tr>
-        <tr><td>Lot Dimensions</td><td>~130 ft × ~80 ft</td></tr>
-        <tr><td>Zoning</td><td>R1 (Residential)</td></tr>
-        <tr><td>County</td><td>Cleveland County</td></tr>
-        <tr><td>ZIP Code</td><td>73139</td></tr>
-        <tr><td>School District</td><td>Moore Public Schools</td></tr>
-        <tr><td>High School</td><td>Westmoore HS</td></tr>
-        <tr><td>Annual Taxes</td><td>~$3,346 (2024)</td></tr>
-      </table>
-    </div>
-  </div>
-
-  <div class="details-grid" style="margin-top:24px">
-    <div class="detail-card">
-      <div class="card-header">🏊 Pool & Outdoor</div>
-      <table>
-        <tr><td>Pool</td><td>Heated in-ground</td></tr>
-        <tr><td>Hot Tub</td><td>Yes, integrated</td></tr>
-        <tr><td>Decking</td><td>Flagstone</td></tr>
-        <tr><td>Cabana</td><td>Pool house with full bathroom</td></tr>
-        <tr><td>Sunroom</td><td>Enclosed, central HVAC</td></tr>
-        <tr><td>Fencing</td><td>Fully fenced yard</td></tr>
-      </table>
-    </div>
-    <div class="detail-card">
-      <div class="card-header">🔥 Interior Features</div>
-      <table>
-        <tr><td>Living Areas</td><td>Multiple (formal + family)</td></tr>
-        <tr><td>Kitchen</td><td>SmartThings appliances</td></tr>
-        <tr><td>Dining</td><td>Formal dining room</td></tr>
-        <tr><td>Flooring</td><td>Mixed (varies by room)</td></tr>
-        <tr><td>Closets</td><td>Walk-in closets</td></tr>
-        <tr><td>Ceiling Fans</td><td>Yes, smart-controlled (Bond)</td></tr>
-      </table>
-    </div>
-  </div>
-</div>
-
-<!-- SMART HOME -->
-<div class="section" id="smart-home" style="background:#fff;max-width:none;padding-left:24px;padding-right:24px">
-  <div style="max-width:1200px;margin:0 auto">
-    <h2 class="section-title">Smart Home Ecosystem</h2>
-    <p class="section-subtitle">90+ connected devices — this home thinks for you</p>
-
-    <div class="smart-grid">
-      <div class="smart-item">
-        <div class="emoji">🔔</div>
-        <div class="name">Ring Security</div>
-        <div class="desc">Cameras & alarm system</div>
-      </div>
-      <div class="smart-item">
-        <div class="emoji">💡</div>
-        <div class="name">Cync Smart Lighting</div>
-        <div class="desc">Whole-home smart bulbs</div>
-      </div>
-      <div class="smart-item">
-        <div class="emoji">🌀</div>
-        <div class="name">Bond Ceiling Fans</div>
-        <div class="desc">App & voice controlled</div>
-      </div>
-      <div class="smart-item">
-        <div class="emoji">❄️</div>
-        <div class="name">Gree Mini-Splits</div>
-        <div class="desc">Smart climate zones</div>
-      </div>
-      <div class="smart-item">
-        <div class="emoji">🍳</div>
-        <div class="name">Samsung SmartThings</div>
-        <div class="desc">Connected appliances</div>
-      </div>
-      <div class="smart-item">
-        <div class="emoji">🌧️</div>
-        <div class="name">Rain Bird</div>
-        <div class="desc">Smart irrigation system</div>
-      </div>
-      <div class="smart-item">
-        <div class="emoji">🚗</div>
-        <div class="name">MyQ Smart Garage</div>
-        <div class="desc">Remote access & alerts</div>
-      </div>
-      <div class="smart-item">
-        <div class="emoji">🗣️</div>
-        <div class="name">Amazon Alexa</div>
-        <div class="desc">Voice control throughout</div>
+  <div class="modal" id="photoModal" aria-hidden="true">
+    <div class="modal-panel">
+      <img class="modal-image" id="modalImage" alt="Expanded property photo" />
+      <div class="modal-meta">
+        <div>
+          <strong id="modalTitle">Photo</strong>
+          <small id="modalCaption">Property image</small>
+        </div>
+        <div class="modal-controls">
+          <button class="modal-btn" type="button" id="prevBtn">← Prev</button>
+          <button class="modal-btn" type="button" id="nextBtn">Next →</button>
+          <button class="modal-btn" type="button" id="closeBtn">Close</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- COMPARABLE SALES -->
-<div class="section" id="comps">
-  <h2 class="section-title">Recent Comparable Sales</h2>
-  <p class="section-subtitle">Same street and nearby area — data supports the asking price</p>
+  <script>
+    window.$crisp = window.$crisp || [];
+    window.CRISP_WEBSITE_ID = "2cad9a09-88af-4689-9977-7aa5a2b07372";
+    window.$crisp.push(["config", "color:theme", ["teal"]]);
+    window.$crisp.push(["config", "color:mode", ["light"]]);
+    window.$crisp.push(["config", "show:operator:count", [false]]);
 
-  <div class="comp-highlight">
-    <table>
-      <thead>
-        <tr>
-          <th>Address</th>
-          <th>Price</th>
-          <th>Sq Ft</th>
-          <th>Beds</th>
-          <th>Baths</th>
-          <th>$/Sq Ft</th>
-          <th>Sold</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="subject">
-          <td>10029 Henderson Dr <span class="tag tag-fsbo">This Home</span></td>
-          <td>$319,900</td>
-          <td>2,516</td>
-          <td>3</td>
-          <td>3</td>
-          <td>$127</td>
-          <td>—</td>
-        </tr>
-        <tr>
-          <td>10033 Henderson Dr</td>
-          <td>$300,000</td>
-          <td>2,310</td>
-          <td>4</td>
-          <td>2.5</td>
-          <td>$130</td>
-          <td>Feb 2026</td>
-        </tr>
-        <tr>
-          <td>10028 Henderson Dr</td>
-          <td>$285,000</td>
-          <td>2,423</td>
-          <td>4</td>
-          <td>3</td>
-          <td>$118</td>
-          <td>Mar 2026</td>
-        </tr>
-        <tr>
-          <td>10032 Henderson Dr</td>
-          <td>$285,000</td>
-          <td>2,134</td>
-          <td>3</td>
-          <td>2.5</td>
-          <td>$134</td>
-          <td>Feb 2024</td>
-        </tr>
-        <tr>
-          <td>600 SW 103rd St</td>
-          <td>$350,000</td>
-          <td>2,914</td>
-          <td>3</td>
-          <td>2.5</td>
-          <td>$120</td>
-          <td>Jan 2025</td>
-        </tr>
-        <tr>
-          <td>512 SW 103rd St</td>
-          <td>$285,000</td>
-          <td>2,371</td>
-          <td>3</td>
-          <td>2.5</td>
-          <td>$120</td>
-          <td>Oct 2025</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <p style="text-align:center;color:var(--muted);font-size:.85rem;margin-top:12px">Average $/sq ft on Henderson Dr: <strong>$126</strong> — this home at $127/sq ft is competitively priced with pool, cabana, sunroom, and smart home included.</p>
-</div>
+    (function() {
+      const d = document;
+      const s = d.createElement("script");
+      s.src = "https://client.crisp.chat/l.js";
+      s.async = 1;
+      d.getElementsByTagName("head")[0].appendChild(s);
+    })();
+  </script>
 
-<!-- NEIGHBORHOOD -->
-<div class="section" id="neighborhood" style="background:#fff;max-width:none;padding-left:24px;padding-right:24px">
-  <div style="max-width:1200px;margin:0 auto">
-    <h2 class="section-title">Neighborhood & Schools</h2>
-    <p class="section-subtitle">Established neighborhood in Moore Public Schools district</p>
+  <script>
+    const photos = [
+      { title: 'Pergola & patio', caption: 'Recent owner photo showing the new backyard pergola and entertaining area.', src: './1c3e5928-0a7b-4e6a-83a7-41fb595ac363.jpg' },
+      { title: 'Aerial map view', caption: 'Overhead map view showing the home in context with the surrounding lots and backyard pool area.', src: './Home map view.png' },
+      { title: 'Photo 1', caption: 'Zillow gallery image 1 of 35.', src: 'https://photos.zillowstatic.com/fp/00b52a9336119c12396d5db28969b151-o_a.jpg' },
+      { title: 'Photo 2', caption: 'Zillow gallery image 2 of 35.', src: 'https://photos.zillowstatic.com/fp/b54098b9c587abd1e08e60bcad435109-o_a.jpg' },
+      { title: 'Photo 3', caption: 'Zillow gallery image 3 of 35.', src: 'https://photos.zillowstatic.com/fp/2787085231fb6980d191ff3f501876fe-o_a.jpg' },
+      { title: 'Photo 4', caption: 'Zillow gallery image 4 of 35.', src: 'https://photos.zillowstatic.com/fp/ed663ca8a67d8a54f4a8d7624c1bb891-o_a.jpg' },
+      { title: 'Photo 5', caption: 'Zillow gallery image 5 of 35.', src: 'https://photos.zillowstatic.com/fp/3bf43cafd2734b9640249d568164db9a-o_a.jpg' },
+      { title: 'Photo 6', caption: 'Zillow gallery image 6 of 35.', src: 'https://photos.zillowstatic.com/fp/d2f604c95add0816404af73ee3eef4ba-o_a.jpg' },
+      { title: 'Photo 7', caption: 'Zillow gallery image 7 of 35.', src: 'https://photos.zillowstatic.com/fp/42881915b4b6ef8d445ca36732f4beb6-o_a.jpg' },
+      { title: 'Photo 8', caption: 'Zillow gallery image 8 of 35.', src: 'https://photos.zillowstatic.com/fp/f15f42a381a111743ebbcd947ca7e342-o_a.jpg' },
+      { title: 'Photo 9', caption: 'Zillow gallery image 9 of 35.', src: 'https://photos.zillowstatic.com/fp/0286912212a11cbda8efbf36d6eca75d-o_a.jpg' },
+      { title: 'Photo 10', caption: 'Zillow gallery image 10 of 35.', src: 'https://photos.zillowstatic.com/fp/9baf67c3f11f5703bfa989d595ccd75e-o_a.jpg' },
+      { title: 'Photo 11', caption: 'Zillow gallery image 11 of 35.', src: 'https://photos.zillowstatic.com/fp/ce1b40aa4ff495d2c0572a408d214a49-o_a.jpg' },
+      { title: 'Photo 12', caption: 'Zillow gallery image 12 of 35.', src: 'https://photos.zillowstatic.com/fp/41ffb2a96a3e03443f61b6227e93d403-o_a.jpg' },
+      { title: 'Photo 13', caption: 'Zillow gallery image 13 of 35.', src: 'https://photos.zillowstatic.com/fp/77671a86bb9df1ea6132bfbfb83f75bd-o_a.jpg' },
+      { title: 'Photo 14', caption: 'Zillow gallery image 14 of 35.', src: 'https://photos.zillowstatic.com/fp/00ef6acf8aac704645149b022fcbc6e9-o_a.jpg' },
+      { title: 'Photo 15', caption: 'Zillow gallery image 15 of 35.', src: 'https://photos.zillowstatic.com/fp/17e18ca7c23b0030163e483140a12af6-o_a.jpg' },
+      { title: 'Photo 16', caption: 'Zillow gallery image 16 of 35.', src: 'https://photos.zillowstatic.com/fp/372f23b974243e215356d195902a2e25-o_a.jpg' },
+      { title: 'Photo 17', caption: 'Zillow gallery image 17 of 35.', src: 'https://photos.zillowstatic.com/fp/b2a54491b4f5591c6caa2235341a23fd-o_a.jpg' },
+      { title: 'Photo 18', caption: 'Zillow gallery image 18 of 35.', src: 'https://photos.zillowstatic.com/fp/8525c99339e9772b1d7fcb6f554b15e4-o_a.jpg' },
+      { title: 'Photo 19', caption: 'Zillow gallery image 19 of 35.', src: 'https://photos.zillowstatic.com/fp/c2415d109f743c6fa7057142522b3ad4-o_a.jpg' },
+      { title: 'Photo 20', caption: 'Zillow gallery image 20 of 35.', src: 'https://photos.zillowstatic.com/fp/b7265d8fcf5622172bc7cb57a2278c9a-o_a.jpg' },
+      { title: 'Photo 21', caption: 'Zillow gallery image 21 of 35.', src: 'https://photos.zillowstatic.com/fp/ce3b6120164289a4ed4c9ced520cad58-o_a.jpg' },
+      { title: 'Photo 22', caption: 'Zillow gallery image 22 of 35.', src: 'https://photos.zillowstatic.com/fp/64543b15ad913a634300f512efb1db85-o_a.jpg' },
+      { title: 'Photo 23', caption: 'Zillow gallery image 23 of 35.', src: 'https://photos.zillowstatic.com/fp/c6cca0e6573815db80be2a0b74a4a7b3-o_a.jpg' },
+      { title: 'Photo 24', caption: 'Zillow gallery image 24 of 35.', src: 'https://photos.zillowstatic.com/fp/2554d1f39062da978a8964e6405b7ff6-o_a.jpg' },
+      { title: 'Photo 25', caption: 'Zillow gallery image 25 of 35.', src: 'https://photos.zillowstatic.com/fp/449339a099450cc06ce28ae183f68a00-o_a.jpg' },
+      { title: 'Photo 26', caption: 'Zillow gallery image 26 of 35.', src: 'https://photos.zillowstatic.com/fp/35b288c0c0f518bd1d8bcad43bc5f648-o_a.jpg' },
+      { title: 'Photo 27', caption: 'Zillow gallery image 27 of 35.', src: 'https://photos.zillowstatic.com/fp/8bd220b6f1a75475037b60d20abe0dac-o_a.jpg' },
+      { title: 'Photo 28', caption: 'Zillow gallery image 28 of 35.', src: 'https://photos.zillowstatic.com/fp/c2425ad303dd4de6838c1294330ad0ed-o_a.jpg' },
+      { title: 'Photo 29', caption: 'Zillow gallery image 29 of 35.', src: 'https://photos.zillowstatic.com/fp/e202da4770bab775554b32e656728002-o_a.jpg' },
+      { title: 'Photo 30', caption: 'Zillow gallery image 30 of 35.', src: 'https://photos.zillowstatic.com/fp/093544201240caf561de6fde6fa2a7d5-o_a.jpg' },
+      { title: 'Photo 31', caption: 'Zillow gallery image 31 of 35.', src: 'https://photos.zillowstatic.com/fp/1002d760f0f11c138ce1cd9ff2db1d44-o_a.jpg' },
+      { title: 'Photo 32', caption: 'Zillow gallery image 32 of 35.', src: 'https://photos.zillowstatic.com/fp/162c577a67e1bce3095bc5bcf44da5fa-o_a.jpg' },
+      { title: 'Photo 33', caption: 'Zillow gallery image 33 of 35.', src: 'https://photos.zillowstatic.com/fp/5fca3e544f37542c3a219b7a89ab4926-o_a.jpg' },
+      { title: 'Photo 34', caption: 'Zillow gallery image 34 of 35.', src: 'https://photos.zillowstatic.com/fp/5a71c2858f295336a92f14b5be01135a-o_a.jpg' },
+      { title: 'Photo 35', caption: 'Zillow gallery image 35 of 35.', src: 'https://photos.zillowstatic.com/fp/37dfe448ac80876aae47e0be5b18071a-o_a.jpg' }
+    ];
 
-    <div class="neighborhood-grid">
-      <div class="neighborhood-card">
-        <h3>🎓 Schools</h3>
-        <ul>
-          <li><strong>District:</strong> Moore Public Schools</li>
-          <li><strong>High School:</strong> Westmoore High School</li>
-          <li><strong>Middle School:</strong> Brink Junior High</li>
-          <li><strong>Elementary:</strong> Houchin Elementary</li>
-        </ul>
-      </div>
-      <div class="neighborhood-card">
-        <h3>📍 Nearby</h3>
-        <ul>
-          <li>Quick access to I-35 & I-240</li>
-          <li>10 min to Will Rogers World Airport</li>
-          <li>Retail, dining & grocery nearby</li>
-          <li>Established residential neighborhood</li>
-        </ul>
-      </div>
-      <div class="neighborhood-card">
-        <h3>🏘️ Henderson Drive</h3>
-        <ul>
-          <li>31 homes on the street</li>
-          <li>Average home size: 2,266 sq ft</li>
-          <li>Average market value: ~$240,000</li>
-          <li>Well-maintained mature neighborhood</li>
-        </ul>
-      </div>
-      <div class="neighborhood-card">
-        <h3>📊 73139 Market</h3>
-        <ul>
-          <li>Median sold price: $230,000</li>
-          <li>Market type: Seller's market</li>
-          <li>Average days on market: ~55</li>
-          <li>Properties typically sell at 97% of list</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
+    const grid = document.getElementById('galleryGrid');
+    const modal = document.getElementById('photoModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalCaption = document.getElementById('modalCaption');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const closeBtn = document.getElementById('closeBtn');
+    let current = 0;
 
-<!-- FSBO EXPLANATION -->
-<div class="section">
-  <div class="fsbo-banner">
-    <strong>🏷️ For Sale by Owner — No Agent Commission</strong>
-    <p>This home is sold directly by the owner. No listing agent commission means better value for both buyer and seller. Buyer's agents are welcome.</p>
-  </div>
-</div>
+    function renderGallery() {
+      grid.innerHTML = photos.map((photo, index) => `
+        <article class="gallery-card" data-index="${index}" tabindex="0" aria-label="Open ${photo.title}">
+          <img src="${photo.src}" alt="${photo.title}" loading="lazy" />
+          <div class="gallery-meta">
+            <strong>${photo.title}</strong>
+            <span>${photo.caption}</span>
+          </div>
+        </article>
+      `).join('');
 
-<!-- CONTACT CTA -->
-<section class="cta-section" id="contact">
-  <h2>Interested in This Home?</h2>
-  <p>Schedule a private showing or ask any questions directly. No agents, no pressure — just a homeowner ready to show you around.</p>
-
-  <div class="cta-buttons">
-    <a href="tel:+19188598843" class="cta-btn primary">📞 Call (918) 859-8843</a>
-    <a href="mailto:dstogsdill@sbc.global.net" class="cta-btn secondary">✉️ Email Owner</a>
-  </div>
-
-  <div class="contact-form">
-    <form id="contactForm" onsubmit="handleSubmit(event)">
-      <div class="form-row">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="tel" name="phone" placeholder="Phone Number" />
-      </div>
-      <input type="email" name="email" placeholder="Email Address" required style="width:100%;margin-bottom:12px" />
-      <textarea name="message" rows="4" placeholder="I'm interested in scheduling a showing..." required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-    <p id="formMsg" style="text-align:center;margin-top:12px;display:none;font-size:.9rem"></p>
-  </div>
-
-  <div class="disclosure-box" style="max-width:700px;margin:32px auto 0">
-    <strong>⚠️ Disclosure Notice</strong>
-    This property was built in 1976. In accordance with federal law, buyers will receive a Lead-Based Paint Disclosure and the EPA pamphlet "Protect Your Family From Lead in Your Home" prior to any purchase agreement. A full Oklahoma Residential Property Condition Disclosure Statement will be provided.
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <p>&copy; 2026 Darrin Stogsdill — For Sale by Owner</p>
-  <p style="margin-top:4px">10029 Henderson Dr, Oklahoma City, OK 73139 · <a href="https://hendersondriveokc.online">hendersondriveokc.online</a></p>
-</footer>
-
-<script>
-function handleSubmit(e) {
-  e.preventDefault();
-  var form = e.target;
-  var msg = document.getElementById('formMsg');
-  var data = new FormData(form);
-  var name = data.get('name');
-  var email = data.get('email');
-  var phone = data.get('phone') || 'Not provided';
-  var message = data.get('message');
-  var subject = encodeURIComponent('Inquiry: 10029 Henderson Dr from ' + name);
-  var body = encodeURIComponent('Name: ' + name + '\nPhone: ' + phone + '\nEmail: ' + email + '\n\nMessage:\n' + message);
-  window.location.href = 'mailto:dstogsdill@sbc.global.net?subject=' + subject + '&body=' + body;
-  msg.style.display = 'block';
-  msg.style.color = '#a7f3d0';
-  msg.textContent = 'Opening your email client... If it doesn\'t open, email dstogsdill@sbc.global.net directly.';
-  form.reset();
-}
-
-// Smooth scroll for nav links
-document.querySelectorAll('header nav a').forEach(function(a) {
-  a.addEventListener('click', function(e) {
-    var href = this.getAttribute('href');
-    if (href.startsWith('#')) {
-      e.preventDefault();
-      var target = document.querySelector(href);
-      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      grid.querySelectorAll('.gallery-card').forEach(card => {
+        card.addEventListener('click', () => openModal(Number(card.dataset.index)));
+        card.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            openModal(Number(card.dataset.index));
+          }
+        });
+      });
     }
-  });
-});
-</script>
+
+    function openModal(index) {
+      current = index;
+      const photo = photos[current];
+      modalImage.src = photo.src;
+      modalImage.alt = photo.title;
+      modalTitle.textContent = photo.title;
+      modalCaption.textContent = photo.caption;
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeModal() {
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+    }
+
+    function step(direction) {
+      current = (current + direction + photos.length) % photos.length;
+      openModal(current);
+    }
+
+    prevBtn.addEventListener('click', () => step(-1));
+    nextBtn.addEventListener('click', () => step(1));
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (event) => {
+      if (event.target === modal) closeModal();
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (!modal.classList.contains('open')) return;
+      if (event.key === 'Escape') closeModal();
+      if (event.key === 'ArrowLeft') step(-1);
+      if (event.key === 'ArrowRight') step(1);
+    });
+
+    const chatPrompts = {
+      general: "Hi! I'm interested in 10029 Henderson Dr and would like a few more details.",
+      showing: "Hi! I'd like to ask about scheduling a showing for 10029 Henderson Dr."
+    };
+
+    function openChat(promptKey) {
+      const prompt = chatPrompts[promptKey] || chatPrompts.general;
+      window.$crisp = window.$crisp || [];
+      window.$crisp.push(["do", "chat:open"]);
+      window.$crisp.push(["set", "message:text", [prompt]]);
+    }
+
+    document.querySelectorAll('[data-open-chat]').forEach((button) => {
+      button.addEventListener('click', () => {
+        openChat(button.dataset.openChat);
+      });
+    });
+
+    renderGallery();
+  </script>
 </body>
 </html>

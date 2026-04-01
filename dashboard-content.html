@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>10029 Henderson Dr — Property Research Dashboard</title>
+<meta name="robots" content="noindex,nofollow" />
+<style>
+:root{--blue:#1a73e8;--blue-dark:#0b51c5;--green:#1e8e3e;--red:#d93025;--orange:#e8710a;--bg:#f5f5f5;--card:#fff;--border:#ddd;--text:#333;--muted:#666;--light:#f9f9f9}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+.adminbar{position:sticky;top:0;z-index:200;background:#0f172a;color:#fff;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;gap:16px;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.adminbar .title{font-weight:700;letter-spacing:.01em}
+.adminbar .actions{display:flex;gap:10px;flex-wrap:wrap}
+.adminbar button,.adminbar a{padding:8px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.08);color:#fff;text-decoration:none;cursor:pointer;font-size:.85rem;font-weight:700}
+.adminbar button:hover,.adminbar a:hover{background:rgba(255,255,255,.16)}
+nav{display:flex;background:var(--blue);overflow-x:auto;position:sticky;top:52px;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+nav a{flex:0 0 auto;padding:12px 18px;text-align:center;text-decoration:none;color:#fff;cursor:pointer;font-size:.85rem;font-weight:500;white-space:nowrap;border-bottom:3px solid transparent;transition:background .2s}
+nav a.active{background:var(--blue-dark);border-bottom-color:#fff}
+nav a:hover{background:rgba(255,255,255,.1)}
+section{display:none;padding:24px;max-width:1200px;margin:0 auto}
+section.active{display:block}
+h1{font-size:1.5rem;margin-bottom:4px}
+h2{font-size:1.3rem;margin:0 0 16px;color:var(--blue)}
+h3{font-size:1.05rem;margin:0 0 8px;color:var(--text)}
+.subtitle{color:var(--muted);font-size:.9rem;margin-bottom:20px}
+.quick-links{display:flex;flex-wrap:wrap;gap:10px;margin:-6px 0 18px}
+.quick-link{display:inline-flex;align-items:center;padding:8px 12px;border:1px solid var(--border);border-radius:999px;background:#fff;color:var(--blue);text-decoration:none;font-size:.85rem;font-weight:600;box-shadow:0 1px 2px rgba(0,0,0,.05)}
+.quick-link:hover{background:#eef4ff;border-color:#c9dafc}
+.card{background:var(--card);border-radius:8px;padding:20px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.08);border:1px solid var(--border)}
+.card h3{margin-bottom:12px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media(max-width:900px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}nav{top:96px}}
+.metric{text-align:center;padding:16px;background:var(--light);border-radius:8px;border:1px solid var(--border)}
+.metric .value{font-size:1.8rem;font-weight:700;color:var(--blue)}
+.metric .label{font-size:.8rem;color:var(--muted);margin-top:4px}
+.metric.green .value{color:var(--green)}
+.metric.red .value{color:var(--red)}
+.metric.orange .value{color:var(--orange)}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.9rem}
+th,td{padding:10px 12px;border:1px solid var(--border);text-align:left}
+th{background:#f2f2f2;cursor:pointer;font-weight:600;position:relative}
+th:hover{background:#e8e8e8}
+tr:nth-child(even){background:var(--light)}
+.tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.75rem;font-weight:600}.tag-sold{background:#e8f5e9;color:#1b5e20}.tag-pending{background:#fff3e0;color:#e65100}.tag-active{background:#e3f2fd;color:#0d47a1}.tag-subject{background:#fce4ec;color:#b71c1c}
+.highlight{background:#fff9c4;padding:2px 6px;border-radius:4px}
+.callout{padding:16px 20px;border-radius:8px;margin:16px 0;border-left:4px solid}
+.callout-info{background:#e3f2fd;border-color:var(--blue)}.callout-warn{background:#fff3e0;border-color:var(--orange)}.callout-good{background:#e8f5e9;border-color:var(--green)}.callout-bad{background:#fce4ec;border-color:var(--red)}
+.callout strong{display:block;margin-bottom:4px}
+.btn{padding:8px 20px;border:none;border-radius:6px;background:var(--blue);color:#fff;cursor:pointer;font-size:.9rem;font-weight:500;transition:background .2s}.btn:hover{background:var(--blue-dark)}
+.form-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin:12px 0}
+.form-grid label{display:flex;flex-direction:column;font-weight:600;font-size:.85rem}.form-grid input,.form-grid select{padding:8px;border:1px solid var(--border);border-radius:4px;margin-top:4px}
+.search-bar{width:100%;padding:10px;border:1px solid var(--border);border-radius:6px;font-size:.9rem;margin-bottom:12px}
+ul.checklist{list-style:none;padding:0}ul.checklist li{padding:8px 12px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px}ul.checklist li:last-child{border-bottom:none}ul.checklist input[type=checkbox]{width:18px;height:18px;accent-color:var(--green)}
+.note-list{list-style:none;padding:0}.note-item{background:var(--card);padding:12px;margin-bottom:8px;border-radius:6px;display:flex;justify-content:space-between;align-items:center;border:1px solid var(--border)}.note-item button{background:var(--red);color:#fff;border:none;padding:4px 12px;border-radius:4px;cursor:pointer;font-size:.8rem}
+.small{font-size:.8rem;color:var(--muted)}
+.reference-links{list-style:none;padding:0;margin:0}
+.reference-links li{padding:12px 0;border-bottom:1px solid var(--border)}
+.reference-links li:last-child{border-bottom:none;padding-bottom:0}
+.reference-links a{font-weight:600;color:var(--blue);text-decoration:none}
+.reference-links a:hover{text-decoration:underline}
+.provider-card{display:flex;gap:16px;padding:16px;background:var(--card);border:1px solid var(--border);border-radius:8px;margin-bottom:12px;align-items:flex-start}.provider-card .rank{font-size:2rem;font-weight:700;color:var(--blue);min-width:40px;text-align:center}.provider-card .details{flex:1}.provider-card .price{font-size:1.3rem;font-weight:700;color:var(--green);white-space:nowrap}
+.cost-comparison{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;text-align:center}.cost-comparison .col{padding:16px;border-radius:8px;border:2px solid var(--border)}.cost-comparison .col.best{border-color:var(--green);background:#f1f8e9}
+.badge{display:inline-block;background:var(--blue);color:#fff;padding:2px 8px;border-radius:4px;font-size:.7rem;font-weight:600;margin-left:6px;vertical-align:middle}
+</style>
+</head>
+<body>
+<div class="adminbar">
+  <div class="title">10029 Henderson Dr · Private Research Dashboard</div>
+  <div class="actions">
+    <a href="/" target="_blank" rel="noreferrer">Open public site</a>
+    <a href="https://app.crisp.chat/website/2cad9a09-88af-4689-9977-7aa5a2b07372/inbox/" target="_blank" rel="noreferrer noopener">Open Crisp inbox</a>
+    <button type="button" id="logoutButton">Log out</button>
+  </div>
+</div>
+<nav>
+<a href="#" class="tab-link active" data-target="overview">Overview</a>
+<a href="#" class="tab-link" data-target="sqft">Sq Ft Analysis</a>
+<a href="#" class="tab-link" data-target="comparables">Comparables</a>
+<a href="#" class="tab-link" data-target="market">Market Analysis</a>
+<a href="#" class="tab-link" data-target="pool">Pool &amp; Cabana</a>
+<a href="#" class="tab-link" data-target="mls">MLS Listing</a>
+<a href="#" class="tab-link" data-target="calculator">Calculator</a>
+<a href="#" class="tab-link" data-target="disclosure">Disclosures</a>
+<a href="#" class="tab-link" data-target="notes">Notes</a>
+</nav>
+<section id="overview" class="active">
+<h1>10029 Henderson Dr, Oklahoma City, OK 73139</h1>
+<p class="subtitle">Comprehensive property research dashboard &mdash; Updated March 25, 2026</p>
+<div class="quick-links">
+<a class="quick-link" href="https://www.hendersondriveokc.online/api/dashboard" target="_blank" rel="noreferrer noopener">Dashboard Login</a>
+<a class="quick-link" href="https://www.houzeo.com/login" target="_blank" rel="noreferrer noopener">Houzeo</a>
+<a class="quick-link" href="https://taxes.clevelandcountytreasurer.org/PropertyDetailOk?p=55288&y=2025&b=1051888" target="_blank" rel="noreferrer noopener">2025 Tax Bill</a>
+<a class="quick-link" href="https://property.spatialest.com/ok/cleveland/#/property/55288" target="_blank" rel="noreferrer noopener">Assessor Record</a>
+<a class="quick-link" href="https://www.zillow.com/homedetails/10029-Henderson-Dr-Oklahoma-City-OK-73139/21749172_zpid/" target="_blank" rel="noreferrer noopener">Zillow</a>
+</div>
+<div class="grid-4">
+<div class="metric green"><div class="value">$321,000</div><div class="label">Zillow Zestimate</div></div>
+<div class="metric"><div class="value">2,516</div><div class="label">Sq Ft (Zillow/Realtor)</div></div>
+<div class="metric"><div class="value">3 / 3</div><div class="label">Beds / Baths</div></div>
+<div class="metric"><div class="value">1976</div><div class="label">Year Built</div></div>
+</div>
+<div class="grid-2" style="margin-top:16px">
+<div class="card">
+<h3>Property Facts</h3>
+<table>
+<tr><td><strong>Address</strong></td><td>10029 Henderson Dr, Oklahoma City, OK 73139</td></tr>
+<tr><td><strong>Style</strong></td><td>Single-story ranch, attached 2-car garage</td></tr>
+<tr><td><strong>Beds / Baths</strong></td><td>3 bedrooms, 2.5 bathrooms (Realtor) / 3 full (Zillow)</td></tr>
+<tr><td><strong>Public Record Sq Ft</strong></td><td>2,199 sq ft (Cleveland County / Compass)</td></tr>
+<tr><td><strong>Zillow Sq Ft</strong></td><td>2,516 sq ft (likely includes sunroom conversion)</td></tr>
+<tr><td><strong>Lot Size</strong></td><td>10,454 sq ft (0.24 acres)</td></tr>
+<tr><td><strong>Lot Dimensions</strong></td><td>~130 ft &times; ~80 ft</td></tr>
+<tr><td><strong>Year Built</strong></td><td>1976</td></tr>
+<tr><td><strong>Construction</strong></td><td>Brick &amp; Frame on slab foundation</td></tr>
+<tr><td><strong>Zoning</strong></td><td>R1 (Residential)</td></tr>
+<tr><td><strong>County</strong></td><td>Cleveland County</td></tr>
+<tr><td><strong>APN</strong></td><td>OCC2BRWV2 13 10001</td></tr>
+<tr><td><strong>School District</strong></td><td>Moore Public Schools (Westmoore HS)</td></tr>
+<tr><td><strong>Fireplace</strong></td><td>Yes (1)</td></tr>
+<tr><td><strong>Last Sold</strong></td><td>April 20, 2018 for $205,000</td></tr>
+</table>
+</div>
+<div class="card">
+<h3>Value Estimates &amp; Tax</h3>
+<table>
+<tr><td><strong>Zillow Zestimate</strong></td><td class="highlight">$321,000 <span class="small">(as of 3/24/2026)</span></td></tr>
+<tr><td><strong>Zillow Range</strong></td><td>$292,000 &ndash; $335,000</td></tr>
+<tr><td><strong>Realtor.com Estimate</strong></td><td>$281,395</td></tr>
+<tr><td><strong>CountyOffice Market Value</strong></td><td>$258,052</td></tr>
+<tr><td><strong>Our Analysis Midpoint</strong></td><td class="highlight">$310,000 &ndash; $321,000</td></tr>
+<tr><td><strong>2024 Property Taxes</strong></td><td>~$3,346 / year</td></tr>
+<tr><td><strong>Tax Assessment</strong></td><td>~$27,483 (not market value)</td></tr>
+<tr><td><strong>Henderson Dr Avg Market Val</strong></td><td>$240,039</td></tr>
+<tr><td><strong>Henderson Dr Avg Tax Bill</strong></td><td>$2,709</td></tr>
+<tr><td><strong>Henderson Dr Avg Bldg Size</strong></td><td>2,266 sq ft</td></tr>
+</table>
+</div>
+</div>
+<div class="card">
+<h3>Reference Links</h3>
+<ul class="reference-links">
+<li><a href="https://www.hendersondriveokc.online/api/dashboard" target="_blank" rel="noreferrer noopener">Private research dashboard login</a><div class="small">Private access page for the research dashboard, comps, disclosures, and calculator tools.</div></li>
+<li><a href="https://www.houzeo.com/login" target="_blank" rel="noreferrer noopener">Houzeo seller login</a><div class="small">Login portal for the Houzeo flat-fee MLS account and listing workflow.</div></li>
+<li><a href="https://taxes.clevelandcountytreasurer.org/PropertyDetailOk?p=55288&y=2025&b=1051888" target="_blank" rel="noreferrer noopener">Cleveland County Treasurer — 2025 tax bill</a><div class="small">Shows the 2025 property tax detail for account 55288, including the paid-in-full total.</div></li>
+<li><a href="https://property.spatialest.com/ok/cleveland/#/property/55288" target="_blank" rel="noreferrer noopener">Cleveland County Assessor — property record card</a><div class="small">Public record page with ownership, market value, sales history, and finished-area details.</div></li>
+<li><a href="https://www.zillow.com/homedetails/10029-Henderson-Dr-Oklahoma-City-OK-73139/21749172_zpid/" target="_blank" rel="noreferrer noopener">Zillow property page</a><div class="small">Public Zillow page for the subject property with Zestimate, photos, and home facts.</div></li>
+</ul>
+</div>
+<div class="card">
+<h3>Key Differentiating Features</h3>
+<div class="grid-3">
+<div><strong>Pool &amp; Outdoor</strong><ul>
+<li>Heated in-ground pool + hot tub</li>
+<li>Flagstone decking</li>
+<li>Pool cabana with full bathroom</li>
+<li>Pergola and patio entertaining area</li>
+</ul></div>
+<div><strong>Interior</strong><ul>
+<li>Studio / workout / flex room</li>
+<li>Chef-style kitchen</li>
+<li>Formal living &amp; dining rooms</li>
+<li>Fireplace</li>
+<li>Walk-in closets</li>
+<li>Multiple living areas</li>
+</ul></div>
+<div><strong>Smart Home (~90 devices)</strong><ul>
+<li>Ring security cameras &amp; alarm</li>
+<li>Cync smart lighting (whole house)</li>
+<li>Bond ceiling fans</li>
+<li>Gree mini-split controls</li>
+<li>Samsung SmartThings appliances</li>
+<li>Rain Bird smart irrigation</li>
+<li>MyQ smart garage</li>
+<li>Multiple Alexa Echos</li>
+</ul></div>
+</div>
+</div>
+</section>
+<section id="sqft">
+<h2>Square Footage Analysis</h2>
+<p class="subtitle">Resolving the discrepancy between public records (2,199) and Zillow (2,516)</p>
+<div class="callout callout-info"><strong>Key Finding</strong>The Cleveland County public record shows <strong>2,199 sq ft</strong> of finished living area. Zillow and Realtor.com both report <strong>2,516 sq ft</strong>. The difference is <strong>317 sq ft</strong>, which aligns almost exactly with the enclosed rear living / sunroom conversion (estimated ~25' &times; 13' = ~325 sq ft).</div>
+<div class="grid-2">
+<div class="card"><h3>Source Comparison</h3><table><tr><th>Source</th><th>Sq Ft</th><th>Notes</th></tr><tr><td>Cleveland County Assessor</td><td><strong>2,199</strong></td><td>Official public record. Likely original footprint before sunroom conversion.</td></tr><tr><td>Zillow</td><td><strong>2,516</strong></td><td>May reflect updated measurement including sunroom.</td></tr><tr><td>Realtor.com</td><td><strong>2,516</strong></td><td>Matches Zillow. Lists as 3 bed, 2.5 bath.</td></tr><tr><td>Compass</td><td><strong>2,199</strong></td><td>Pulls from public record. Lists as 3 bed, 3 bath.</td></tr></table></div>
+<div class="card"><h3>The Math</h3><table><tr><td>Original structure (county record)</td><td style="text-align:right"><strong>2,199 sq ft</strong></td></tr><tr><td>Rear conversion / enclosed space</td><td style="text-align:right"><strong>+325 sq ft</strong></td></tr><tr style="background:#e8f5e9"><td><strong>Calculated total</strong></td><td style="text-align:right"><strong>~2,524 sq ft</strong></td></tr><tr><td>Zillow/Realtor reported</td><td style="text-align:right">2,516 sq ft</td></tr><tr><td>Variance</td><td style="text-align:right">~8 sq ft (0.3%)</td></tr></table><p class="small" style="margin-top:8px">The tiny 8 sq ft variance is well within normal rounding.</p></div>
+</div>
+<div class="card"><h3>Verification Notes</h3><p>The original FLOOR PLAN.pdf is a rasterized scan of a hand-drawn architectural sheet. OCR was unreliable for exact room labels and dimensions, so the strongest practical conclusion remains that the public-record gap is explained by the rear conversion space.</p><div class="callout callout-warn" style="margin-top:12px"><strong>Action Item</strong>Verify whether the enclosed rear space was permitted and whether the county record should be updated. If it was never permitted, an appraiser may still default back to 2,199 sq ft for financed offers.</div></div>
+</section>
+<section id="comparables">
+<h2>Comparable Sales &amp; Active Listings</h2>
+<p class="subtitle">Henderson Dr and nearby properties in 73139</p>
+<input type="text" id="compSearch" class="search-bar" placeholder="Search by address, price, status..." />
+<table id="compTable"><thead><tr><th data-sort="status">Status</th><th data-sort="address">Address</th><th data-sort="salePrice">Price</th><th data-sort="sqFt">Sq Ft</th><th data-sort="beds">Beds</th><th data-sort="baths">Baths</th><th data-sort="pricePerSqFt">$/Sq Ft</th><th data-sort="yearBuilt">Built</th><th data-sort="date">Date</th><th>Notes</th></tr></thead><tbody></tbody></table>
+<div class="card" style="margin-top:20px"><h3>Add New Comparable</h3><div class="form-grid"><label>Address<input type="text" id="newAddress" placeholder="123 Example St" /></label><label>Sale Price ($)<input type="number" id="newPrice" /></label><label>Sq Ft<input type="number" id="newSqFt" /></label><label>Beds<input type="number" id="newBeds" /></label><label>Baths<input type="number" id="newBaths" step="0.5" /></label><label>Year Built<input type="number" id="newYearBuilt" /></label><label>Date<input type="date" id="newDate" /></label><label>Status<select id="newStatus"><option>Sold</option><option>Pending</option><option>Active</option></select></label><label>Link<input type="url" id="newLink" placeholder="https://..." /></label></div><button class="btn" id="addComparable">Add Comparable</button></div>
+<div class="card" style="margin-top:16px"><h3>Henderson Drive Street Statistics (all 31 properties)</h3><div class="grid-4"><div class="metric"><div class="value">$240K</div><div class="label">Avg Market Value</div></div><div class="metric"><div class="value">2,266</div><div class="label">Avg Building Size</div></div><div class="metric"><div class="value">$2,709</div><div class="label">Avg Annual Tax</div></div><div class="metric"><div class="value">0.24 ac</div><div class="label">Avg Lot Size</div></div></div></div>
+</section>
+<section id="market">
+<h2>Market Analysis &amp; Pricing Strategy</h2>
+<p class="subtitle">Data-driven pricing based on comparable sales and market conditions</p>
+<div class="grid-3"><div class="metric green"><div class="value">$310K&ndash;$321K</div><div class="label">Estimated Market Value</div></div><div class="metric"><div class="value">$315K&ndash;$320K</div><div class="label">Recommended List Price</div></div><div class="metric orange"><div class="value">$302K&ndash;$312K</div><div class="label">Expected Negotiation Zone</div></div></div>
+<div class="grid-2" style="margin-top:16px"><div class="card"><h3>Price Per Square Foot Analysis</h3><table><tr><th>Scenario</th><th>Sq Ft Used</th><th>$/Sq Ft at $310K</th><th>$/Sq Ft at $321K</th></tr><tr><td>County record (2,199)</td><td>2,199</td><td><strong>$141</strong></td><td><strong>$146</strong></td></tr><tr><td>Zillow/Realtor (2,516)</td><td>2,516</td><td><strong>$123</strong></td><td><strong>$128</strong></td></tr></table><h3 style="margin-top:16px">Comp $/Sq Ft Comparison</h3><table><tr><th>Comp</th><th>$/Sq Ft</th><th>Relevance</th></tr><tr><td>10033 Henderson ($300K, 2,310sf)</td><td>$130</td><td>Best anchor - same street</td></tr><tr><td>10032 Henderson ($285K, 2,134sf)</td><td>$134</td><td>Same street, smaller</td></tr><tr><td>10028 Henderson ($285K, 2,423sf)</td><td>$118</td><td>Same street, just sold 3/12</td></tr><tr><td>10024 Henderson ($275K pending, 2,281sf)</td><td>$121</td><td>Same street, pending now</td></tr><tr><td>512 SW 103rd ($285K, 2,371sf)</td><td>$120</td><td>Nearby, similar size</td></tr><tr><td>41 SW 102nd ($284K, 2,384sf)</td><td>$119</td><td>Nearby, recent</td></tr><tr><td>600 SW 103rd ($350K, 2,914sf)</td><td>$120</td><td>Upper band, larger</td></tr><tr style="background:#e8f5e9"><td><strong>Average (top 4 same-street)</strong></td><td><strong>$126</strong></td><td></td></tr></table><p class="small" style="margin-top:8px">At $126/sqft &times; 2,516 sqft = <strong>$317,016</strong>. At $130/sqft (10033 anchor) &times; 2,516 = <strong>$327,080</strong>.</p></div><div class="card"><h3>Pricing Scenarios</h3><table><tr><th>Strategy</th><th>Price</th><th>Rationale</th></tr><tr><td>Quick / As-Is</td><td>$295K&ndash;$302K</td><td>If buyers perceive updates needed or pool equipment dated</td></tr><tr style="background:#e8f5e9"><td><strong>Most Probable Sale</strong></td><td><strong>$308K&ndash;$318K</strong></td><td>Condition average-to-good, pool/cabana present well</td></tr><tr><td>Stretch Ask</td><td>$319,900</td><td>Requires excellent staging, photos, light competition</td></tr><tr><td>Aggressive FSBO</td><td>$324,900</td><td>Room to negotiate down to $310K+ zone</td></tr></table><h3 style="margin-top:20px">Oklahoma Market Conditions (March 2026)</h3><table><tr><td>OK Median Home Sale Price</td><td>$256,800 (+5.5% YoY)</td></tr><tr><td>73139 Median Sold Price</td><td>$230,000</td></tr><tr><td>Moore Median Sold Price</td><td>$230,000</td></tr><tr><td>Median Days on Market (OK)</td><td>55 days</td></tr><tr><td>Avg Sold vs. List Price</td><td>97% of original list</td></tr><tr><td>Price Drop Rate</td><td>20% of listings (up 2% YoY)</td></tr><tr><td>Market Type</td><td>Seller's market (demand &gt; inventory)</td></tr></table><h3 style="margin-top:20px">Why This Home Prices Above the 73139 Median</h3><ul><li>2,516 sqft is <strong>11% larger</strong> than Henderson Dr average (2,266)</li><li>Pool + hot tub + cabana/full bath package is uncommon</li><li>Moore school district draw</li><li>Smart home ecosystem (~90 devices) differentiates from plain comps</li><li>Rear conversion adds functional climate-controlled living space</li><li>Multiple formal spaces (living, dining, family/game room)</li></ul></div></div><div class="callout callout-warn"><strong>Risk Factors That Could Pull Value Down</strong><ul><li>1976 build &mdash; buyers may discount for dated finishes, plumbing, electrical</li><li>Pools narrow buyer pool</li><li>Unknown age/condition of roof, HVAC, windows, and pool equipment</li><li>Older homes get hit hard in inspection negotiations</li><li>If the rear conversion lacks permits, appraiser credit may be limited</li><li>Lead paint disclosure required (pre-1978 home)</li></ul></div>
+</section>
+<section id="pool">
+<h2>Pool &amp; Cabana Value Impact</h2>
+<p class="subtitle">Research-backed analysis of how the pool, hot tub, and cabana affect home value</p>
+<div class="grid-3"><div class="metric green"><div class="value">7&ndash;15%</div><div class="label">OK Pool Value Premium</div></div><div class="metric"><div class="value">5&ndash;8%</div><div class="label">National Average Pool Premium</div></div><div class="metric orange"><div class="value">10&ndash;13%</div><div class="label">OK Metro MLS Data</div></div></div>
+<div class="grid-2" style="margin-top:16px"><div class="card"><h3>What the Data Says</h3><table><tr><th>Source</th><th>Finding</th></tr><tr><td>Realtor.com / HomeLight 2024</td><td>Custom pool can increase OK home value by <strong>7&ndash;15%</strong></td></tr><tr><td>National average (Zillow)</td><td>Homes with pools sell for ~<strong>1.5%</strong> more (conservative)</td></tr><tr><td>Redfin / Curbio</td><td>~<strong>7%</strong> national return</td></tr><tr><td>Oklahoma metro MLS</td><td>Custom pools sell <strong>10&ndash;13%</strong> higher</td></tr></table><h3 style="margin-top:16px">Applied to This Home</h3><table><tr><th>Base Value (without pool)</th><th>Pool Premium</th><th>Implied Value</th></tr><tr><td>$280,000</td><td>7% = +$19,600</td><td>$299,600</td></tr><tr><td>$280,000</td><td>10% = +$28,000</td><td>$308,000</td></tr><tr><td>$280,000</td><td>13% = +$36,400</td><td>$316,400</td></tr></table></div><div class="card"><h3>Value Drivers</h3><ul><li><strong>Heated pool</strong> extends seasonal usability</li><li><strong>Hot tub</strong> adds year-round appeal</li><li><strong>Cabana with full bath</strong> is rare in this price band</li><li><strong>Flagstone decking</strong> reads premium versus plain concrete</li><li><strong>Pergola and shaded patio</strong> improve backyard function and photos</li></ul><div class="callout callout-good" style="margin-top:14px"><strong>Bottom Line</strong>The pool/cabana/spa/pergola package supports the upper end of the likely value range if it presents cleanly and the equipment is in good working order.</div></div></div>
+</section>
+<section id="mls">
+<h2>Flat Fee MLS Listing Services</h2>
+<p class="subtitle">Get on MLSOK without a traditional listing commission</p>
+<div class="callout callout-info"><strong>How Flat Fee MLS Works</strong>A licensed broker lists the home on MLSOK for a flat fee instead of a full listing commission. The listing then syndicates to Zillow, Realtor.com, Redfin, and similar portals while seller-side inquiries can still route directly to the owner.</div>
+<div class="provider-card" style="border-left:4px solid var(--green)"><div class="rank">1</div><div class="details"><h3>Brokerless.com <span class="badge">Best Overall</span></h3><p><strong>Coverage:</strong> Statewide &mdash; MLSOK, MLS Technology, regional boards</p><p><strong>Recommended plan:</strong> $188 &mdash; 12-month term, 25 photos, unlimited changes</p><p><strong>Closing fees:</strong> None</p><p><strong>Rating:</strong> 4.6/5 (131 Google reviews)</p></div><div class="price">From $99</div></div>
+<div class="provider-card"><div class="rank">2</div><div class="details"><h3>Houzeo</h3><p><strong>Plans:</strong> From $249 upfront</p><p><strong>Closing fees:</strong> 0.5%&ndash;1.25% at closing</p></div><div class="price">From $249+</div></div>
+<div class="provider-card"><div class="rank">3</div><div class="details"><h3>HomeZu</h3><p><strong>Plans:</strong> $399 upfront</p><p><strong>Closing fees:</strong> 0.1%&ndash;0.25%</p></div><div class="price">$399+</div></div>
+<div class="card" style="margin-top:20px"><h3>Cost Comparison: Flat Fee vs. Traditional Agent</h3><p>Assuming a <strong>$315,000 sale price</strong>:</p><div class="cost-comparison"><div class="col best"><h3>Brokerless ($188)</h3><div style="font-size:2rem;font-weight:700;color:var(--green)">$188</div><p class="small">Total listing cost</p><p style="margin-top:8px"><strong>You save: $9,262</strong></p></div><div class="col"><h3>Houzeo ($249 + 1%)</h3><div style="font-size:2rem;font-weight:700;color:var(--orange)">$3,399</div><p class="small">Estimated package cost</p></div><div class="col"><h3>Traditional Agent (3%)</h3><div style="font-size:2rem;font-weight:700;color:var(--red)">$9,450</div><p class="small">3% listing commission</p></div></div></div>
+</section>
+<section id="calculator">
+<h2>Net Proceeds Calculator</h2>
+<p class="subtitle">Estimate walk-away cash after mortgages and selling costs</p>
+<div class="grid-2"><div class="card"><h3>Sale Parameters</h3><div class="form-grid"><label>Expected Sale Price ($)<input type="number" id="calcSalePrice" value="315000" /></label><label>First Mortgage Payoff ($)<input type="number" id="calcMortgage1" value="150000" /></label><label>Second Mortgage Payoff ($)<input type="number" id="calcMortgage2" value="50000" /></label><label>Buyer Agent Commission (%)<input type="number" id="calcBuyerComm" value="2.5" step="0.1" /></label><label>Listing Cost ($)<input type="number" id="calcListingCost" value="188" /></label><label>Closing Costs (%)<input type="number" id="calcClosingPct" value="1.5" step="0.1" /></label><label>Prep / Repair Budget ($)<input type="number" id="calcPrep" value="6000" /></label><label>Other Costs ($)<input type="number" id="calcOther" value="0" /></label></div><button class="btn" id="calcButton" style="margin-top:12px">Calculate Net Proceeds</button></div><div class="card"><h3>Results</h3><div id="calcResults" style="font-size:.95rem"><p style="text-align:center;color:var(--muted);padding:40px">Enter values and click Calculate</p></div></div></div>
+<div class="card" style="margin-top:16px"><h3>Quick Reference: FSBO Net at Various Sale Prices</h3><p class="small">Assumes: $200K total mortgage payoff, $188 flat-fee listing, 2.5% buyer agent commission, 1.5% closing costs, $6K prep budget</p><table><thead><tr><th>Sale Price</th><th>Buyer Agent (2.5%)</th><th>Closing (1.5%)</th><th>Listing + Prep</th><th>Total Costs</th><th style="background:#e8f5e9">Net Proceeds</th></tr></thead><tbody id="quickRefTable"></tbody></table></div>
+</section>
+<section id="disclosure">
+<h2>Oklahoma Seller Disclosure Requirements</h2>
+<p class="subtitle">Legal requirements for selling residential property in Oklahoma</p>
+<div class="callout callout-bad"><strong>CRITICAL: Lead Paint Disclosure Required</strong>Your home was built in <strong>1976</strong> (pre-1978). Federal law requires a lead-based paint disclosure, delivery of the EPA pamphlet, disclosure of any known hazards, and the proper contract notice language.</div>
+<div class="card"><h3>Oklahoma Residential Property Condition Disclosure Statement</h3><p>Use this checklist to track the key disclosure categories:</p><ul class="checklist" id="disclosureChecklist"><li><input type="checkbox" /> <strong>Air Conditioning</strong></li><li><input type="checkbox" /> <strong>Heating System</strong></li><li><input type="checkbox" /> <strong>Appliances</strong></li><li><input type="checkbox" /> <strong>Electrical</strong></li><li><input type="checkbox" /> <strong>Plumbing / Sewage</strong></li><li><input type="checkbox" /> <strong>Water Supply</strong></li><li><input type="checkbox" /> <strong>Roof</strong></li><li><input type="checkbox" /> <strong>Foundation / Structure</strong></li><li><input type="checkbox" /> <strong>Fireplace</strong></li><li><input type="checkbox" /> <strong>Smoke Detectors</strong></li><li><input type="checkbox" /> <strong>Exterior Drainage</strong></li><li><input type="checkbox" /> <strong>Flood Zone</strong></li><li><input type="checkbox" /> <strong>Boundary Issues</strong></li><li><input type="checkbox" /> <strong>Hazardous Materials</strong></li><li><input type="checkbox" /> <strong>Termite / Wood-Destroying Insects</strong></li><li><input type="checkbox" /> <strong>Permitted Improvements</strong></li><li><input type="checkbox" /> <strong>Pool / Spa</strong></li><li><input type="checkbox" /> <strong>Lead Paint Disclosure</strong></li></ul></div>
+<div class="card"><h3>Important Notes for This Property</h3><ul><li><strong>Rear conversion</strong> &mdash; disclose permit status if uncertain.</li><li><strong>Pool barriers / fencing</strong> &mdash; verify code compliance and safety hardware.</li><li><strong>Smart home devices</strong> &mdash; document exactly what conveys with the sale.</li><li><strong>As-is language</strong> does not remove disclosure obligations.</li></ul></div>
+</section>
+<section id="notes">
+<h2>Research Notes &amp; Action Items</h2>
+<textarea id="noteInput" rows="3" style="width:100%;padding:10px;border:1px solid var(--border);border-radius:6px;font-size:.9rem" placeholder="Enter a note or action item..."></textarea>
+<button class="btn" id="noteAdd" style="margin-top:8px">Add Note</button>
+<ul id="noteList" class="note-list" style="margin-top:12px"></ul>
+</section>
+<script>
+document.querySelectorAll('.tab-link').forEach(function(link){link.addEventListener('click',function(e){e.preventDefault();document.querySelectorAll('.tab-link').forEach(function(l){l.classList.remove('active')});document.querySelectorAll('section').forEach(function(s){s.classList.remove('active')});this.classList.add('active');document.getElementById(this.getAttribute('data-target')).classList.add('active');});});
+var comparables=[{address:"10029 Henderson Dr (SUBJECT)",salePrice:321000,sqFt:2516,beds:3,baths:3,yearBuilt:1976,date:"",status:"Subject",link:"https://www.zillow.com/homedetails/10029-Henderson-Dr-Oklahoma-City-OK-73139/21749172_zpid/",notes:"YOUR HOME. Zestimate $321K. Pool/cabana/flex room/smart home."},{address:"10033 Henderson Dr",salePrice:300000,sqFt:2310,beds:4,baths:2.5,yearBuilt:1976,date:"2026-02-25",status:"Sold",link:"https://www.realtor.com/realestateandhomes-detail/10033-Henderson-Dr_Oklahoma-City_OK_73139_M87853-29686",notes:"Best same-street anchor."},{address:"10028 Henderson Dr",salePrice:285000,sqFt:2423,beds:4,baths:3,yearBuilt:1976,date:"2026-03-12",status:"Sold",link:"",notes:"Same street. $118/sqft."},{address:"10032 Henderson Dr",salePrice:285000,sqFt:2134,beds:3,baths:2.5,yearBuilt:1977,date:"2024-02-16",status:"Sold",link:"",notes:"Same street, smaller."},{address:"10024 Henderson Dr",salePrice:275000,sqFt:2281,beds:3,baths:2.5,yearBuilt:1976,date:"2026-02-19",status:"Pending",link:"",notes:"Pending same-street listing."},{address:"512 SW 103rd St",salePrice:285000,sqFt:2371,beds:3,baths:2.5,yearBuilt:1979,date:"2025-10-14",status:"Sold",link:"",notes:"Nearby comp."},{address:"41 SW 102nd St",salePrice:284400,sqFt:2384,beds:4,baths:3,yearBuilt:1972,date:"2026-02-13",status:"Sold",link:"",notes:"Nearby recent close."},{address:"600 SW 103rd St",salePrice:350000,sqFt:2914,beds:3,baths:2.5,yearBuilt:1979,date:"2025-01-01",status:"Sold",link:"",notes:"Upper band, larger home."},{address:"113 W Ranchwood Ct",salePrice:305000,sqFt:2308,beds:4,baths:2.5,yearBuilt:0,date:"2026-03-01",status:"Active",link:"",notes:"Active listing, useful live competition."}];comparables.forEach(function(c){c.pricePerSqFt=c.sqFt?(c.salePrice/c.sqFt).toFixed(0):0});
+var compTableBody=document.getElementById('compTable').querySelector('tbody');var compSearch=document.getElementById('compSearch');var headers=document.querySelectorAll('#compTable th[data-sort]');var currentSortKey=null,sortAsc=true;function statusTag(s){var cls={'Sold':'tag-sold','Pending':'tag-pending','Active':'tag-active','Subject':'tag-subject'}[s]||'';return '<span class="tag '+cls+'">'+s+'</span>';}function renderComparables(){var filter=compSearch.value.toLowerCase();var comps=comparables.slice().filter(function(c){return c.address.toLowerCase().includes(filter)||c.status.toLowerCase().includes(filter)||String(c.salePrice).includes(filter);});if(currentSortKey){comps.sort(function(a,b){var va=a[currentSortKey],vb=b[currentSortKey];if(!isNaN(parseFloat(va))&&!isNaN(parseFloat(vb))){va=parseFloat(va);vb=parseFloat(vb)}if(va<vb)return sortAsc?-1:1;if(va>vb)return sortAsc?1:-1;return 0;});}compTableBody.innerHTML='';comps.forEach(function(c){var row=document.createElement('tr');if(c.status==='Subject')row.style.background='#fce4ec';row.innerHTML='<td>'+statusTag(c.status)+'</td>'+'<td>'+(c.link?'<a href="'+c.link+'" target="_blank">'+c.address+'</a>':c.address)+'</td>'+'<td>$'+Number(c.salePrice).toLocaleString()+'</td>'+'<td>'+c.sqFt.toLocaleString()+'</td>'+'<td>'+c.beds+'</td>'+'<td>'+c.baths+'</td>'+'<td>$'+c.pricePerSqFt+'</td>'+'<td>'+(c.yearBuilt||'--')+'</td>'+'<td>'+(c.date?new Date(c.date+'T00:00:00').toLocaleDateString():'--')+'</td>'+'<td class="small">'+c.notes+'</td>';compTableBody.appendChild(row);});}compSearch.addEventListener('input',renderComparables);headers.forEach(function(th){th.addEventListener('click',function(){var key=this.getAttribute('data-sort');if(currentSortKey===key){sortAsc=!sortAsc}else{currentSortKey=key;sortAsc=true}renderComparables();});});renderComparables();document.getElementById('addComparable').addEventListener('click',function(){var addr=document.getElementById('newAddress').value.trim();var price=parseFloat(document.getElementById('newPrice').value);var sqft=parseFloat(document.getElementById('newSqFt').value);var beds=parseFloat(document.getElementById('newBeds').value);var baths=parseFloat(document.getElementById('newBaths').value);var yb=parseInt(document.getElementById('newYearBuilt').value)||0;var dt=document.getElementById('newDate').value;var st=document.getElementById('newStatus').value;var lnk=document.getElementById('newLink').value.trim();if(!addr||!price||!sqft)return alert('Address, price, and sqft are required');comparables.push({address:addr,salePrice:price,sqFt:sqft,beds:beds||0,baths:baths||0,yearBuilt:yb,date:dt,status:st,link:lnk,notes:'User added',pricePerSqFt:sqft?(price/sqft).toFixed(0):0});renderComparables();['newAddress','newPrice','newSqFt','newBeds','newBaths','newYearBuilt','newDate','newLink'].forEach(function(id){document.getElementById(id).value=''});});
+document.getElementById('calcButton').addEventListener('click',function(){var sp=parseFloat(document.getElementById('calcSalePrice').value)||0;var m1=parseFloat(document.getElementById('calcMortgage1').value)||0;var m2=parseFloat(document.getElementById('calcMortgage2').value)||0;var bc=(parseFloat(document.getElementById('calcBuyerComm').value)||0)/100;var lc=parseFloat(document.getElementById('calcListingCost').value)||0;var cc=(parseFloat(document.getElementById('calcClosingPct').value)||0)/100;var prep=parseFloat(document.getElementById('calcPrep').value)||0;var other=parseFloat(document.getElementById('calcOther').value)||0;var buyerComm=sp*bc;var closingCosts=sp*cc;var totalMortgage=m1+m2;var totalCosts=buyerComm+lc+closingCosts+prep+other;var net=sp-totalMortgage-totalCosts;var fmt=function(n){return(n>=0?'$':'-$')+Math.abs(n).toLocaleString(undefined,{maximumFractionDigits:0})};var html='<table>'+'<tr><td>Sale Price</td><td style="text-align:right"><strong>'+fmt(sp)+'</strong></td></tr>'+'<tr><td colspan="2" style="background:#f2f2f2;font-weight:600">Deductions</td></tr>'+'<tr><td>  First Mortgage Payoff</td><td style="text-align:right;color:var(--red)">-'+fmt(m1)+'</td></tr>'+'<tr><td>  Second Mortgage Payoff</td><td style="text-align:right;color:var(--red)">-'+fmt(m2)+'</td></tr>'+'<tr><td>  Buyer Commission ('+document.getElementById('calcBuyerComm').value+'%)</td><td style="text-align:right;color:var(--red)">-'+fmt(buyerComm)+'</td></tr>'+'<tr><td>  Flat Fee Listing</td><td style="text-align:right;color:var(--red)">-'+fmt(lc)+'</td></tr>'+'<tr><td>  Closing Costs ('+document.getElementById('calcClosingPct').value+'%)</td><td style="text-align:right;color:var(--red)">-'+fmt(closingCosts)+'</td></tr>'+'<tr><td>  Prep / Repair Budget</td><td style="text-align:right;color:var(--red)">-'+fmt(prep)+'</td></tr>'+(other?'<tr><td>  Other Costs</td><td style="text-align:right;color:var(--red)">-'+fmt(other)+'</td></tr>':'')+'<tr><td colspan="2" style="background:#f2f2f2;font-weight:600">Summary</td></tr>'+'<tr><td>Total Mortgage Payoff</td><td style="text-align:right">'+fmt(totalMortgage)+'</td></tr>'+'<tr><td>Total Selling Costs</td><td style="text-align:right">'+fmt(totalCosts)+'</td></tr>'+'<tr style="background:'+(net>=0?'#e8f5e9':'#fce4ec')+'">'+'<td><strong>ESTIMATED NET PROCEEDS</strong></td><td style="text-align:right;font-size:1.3rem;font-weight:700;color:'+(net>=0?'var(--green)':'var(--red)')+'">' +fmt(net)+'</td></tr>'+'</table>';document.getElementById('calcResults').innerHTML=html;});(function(){var tbody=document.getElementById('quickRefTable');[295000,300000,305000,310000,315000,320000,325000].forEach(function(sp){var ba=sp*0.025,cc=sp*0.015,other=188+6000;var totalCosts=ba+cc+other;var net=sp-200000-totalCosts;var row=document.createElement('tr');if(sp===315000)row.style.background='#e8f5e9';row.innerHTML='<td>$'+sp.toLocaleString()+'</td><td>$'+ba.toLocaleString()+'</td><td>$'+cc.toLocaleString()+'</td><td>$'+other.toLocaleString()+'</td><td>$'+totalCosts.toLocaleString()+'</td><td style="font-weight:700;color:'+(net>=0?'var(--green)':'var(--red)')+'">' +'$'+net.toLocaleString()+'</td>';tbody.appendChild(row);});})();function loadNotes(){var notes=JSON.parse(localStorage.getItem('propertyNotes')||'[]');var list=document.getElementById('noteList');list.innerHTML='';notes.forEach(function(note,i){var li=document.createElement('li');li.className='note-item';var span=document.createElement('span');span.textContent=note;var btn=document.createElement('button');btn.textContent='Delete';btn.addEventListener('click',function(){notes.splice(i,1);localStorage.setItem('propertyNotes',JSON.stringify(notes));loadNotes()});li.appendChild(span);li.appendChild(btn);list.appendChild(li);});}document.getElementById('noteAdd').addEventListener('click',function(){var txt=document.getElementById('noteInput').value.trim();if(!txt)return;var notes=JSON.parse(localStorage.getItem('propertyNotes')||'[]');notes.push(txt);localStorage.setItem('propertyNotes',JSON.stringify(notes));document.getElementById('noteInput').value='';loadNotes();});loadNotes();document.getElementById('calcButton').click();document.getElementById('logoutButton').addEventListener('click',async function(){await fetch('/api/logout',{method:'POST'});window.location.href='/admin.html';});
+</script>
+</body>
+</html>
