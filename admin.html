@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>10029 Henderson Dr | Research Login</title>
+  <meta name="robots" content="noindex,nofollow" />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: rgba(255,255,255,0.96);
+      --ink: #0f172a;
+      --muted: #475569;
+      --line: #dbe4ee;
+      --brand: #0f766e;
+      --brand-dark: #115e59;
+      --danger: #b91c1c;
+      --shadow: 0 28px 65px rgba(2, 6, 23, 0.35);
+      --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(15, 118, 110, 0.28), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(29, 78, 216, 0.22), transparent 24%),
+        var(--bg);
+      color: var(--ink);
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+    .card {
+      width: min(460px, 100%);
+      background: var(--panel);
+      border: 1px solid rgba(255,255,255,0.7);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 30px;
+    }
+    .eyebrow {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #ecfeff;
+      color: var(--brand-dark);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+    }
+    p {
+      color: var(--muted);
+      margin: 0 0 18px;
+      line-height: 1.6;
+    }
+    form {
+      display: grid;
+      gap: 14px;
+    }
+    label {
+      display: grid;
+      gap: 8px;
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+    input {
+      width: 100%;
+      padding: 14px 15px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      font-size: 1rem;
+    }
+    input:focus {
+      outline: 2px solid rgba(15, 118, 110, 0.15);
+      border-color: var(--brand);
+    }
+    button {
+      margin-top: 4px;
+      border: 0;
+      border-radius: 999px;
+      padding: 14px 18px;
+      background: var(--brand);
+      color: white;
+      font-weight: 800;
+      font-size: 0.98rem;
+      cursor: pointer;
+      transition: transform 0.18s ease, background 0.18s ease;
+    }
+    button:hover {
+      transform: translateY(-1px);
+      background: var(--brand-dark);
+    }
+    .message {
+      min-height: 24px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--danger);
+    }
+    .footer-note {
+      margin-top: 18px;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="eyebrow">Private research access</div>
+    <h1>Log in to the Henderson research dashboard</h1>
+    <p>This keeps the public listing site separate from the private property research, comps, disclosures, and calculator tools.</p>
+
+    <form id="loginForm">
+      <label>
+        Username
+        <input type="text" name="username" autocomplete="username" required />
+      </label>
+      <label>
+        Password
+        <input type="password" name="password" autocomplete="current-password" required />
+      </label>
+      <button type="submit">Open dashboard</button>
+      <div class="message" id="message"></div>
+    </form>
+
+    <div class="footer-note">Tip: bookmark this page for research access. The public site remains on the home page.</div>
+  </main>
+
+  <script>
+    const form = document.getElementById('loginForm');
+    const message = document.getElementById('message');
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      message.textContent = 'Checking credentials\u2026';
+
+      const formData = new FormData(form);
+      const payload = {
+        username: formData.get('username'),
+        password: formData.get('password')
+      };
+
+      try {
+        const response = await fetch('/api/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await response.json();
+        if (!response.ok || !data.ok) {
+          throw new Error(data.message || 'Login failed.');
+        }
+
+        window.location.href = data.redirect || '/api/dashboard';
+      } catch (error) {
+        message.textContent = error.message || 'Login failed.';
+      }
+    });
+  </script>
+</body>
+</html>
